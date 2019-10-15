@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Booking() {
     return(
         <React.Fragment>
-            this is from app
+            this is from addto cart booking page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Booking;

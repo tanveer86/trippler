@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Dashboard() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Dashboard page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Dashboard;

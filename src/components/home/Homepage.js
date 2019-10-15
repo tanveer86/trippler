@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Homepage() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Homepage
         </React.Fragment>
     )
 }
 
-export default App;
+export default Homepage;

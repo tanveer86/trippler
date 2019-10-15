@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Sucess() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Sucess page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Sucess;

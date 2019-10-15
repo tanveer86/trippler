@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function AddProduct() {
     return(
         <React.Fragment>
-            this is from app
+            this is from add product page
         </React.Fragment>
     )
 }
 
-export default App;
+export default AddProduct;

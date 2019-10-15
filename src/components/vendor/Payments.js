@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Payments() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Payments page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Payments;

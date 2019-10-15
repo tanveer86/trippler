@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function LiveBidding() {
     return(
         <React.Fragment>
-            this is from app
+            this is from LiveBidding page
         </React.Fragment>
     )
 }
 
-export default App;
+export default LiveBidding;

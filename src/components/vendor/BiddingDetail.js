@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function BiddingDetail() {
     return(
         <React.Fragment>
-            this is from app
+            this is from BiddingDetail page
         </React.Fragment>
     )
 }
 
-export default App;
+export default BiddingDetail;

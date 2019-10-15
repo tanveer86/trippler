@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Category() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Category page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Category;

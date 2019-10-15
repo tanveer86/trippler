@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function OrderDetail() {
     return(
         <React.Fragment>
-            this is from app
+            this is from OrderDetail page
         </React.Fragment>
     )
 }
 
-export default App;
+export default OrderDetail;

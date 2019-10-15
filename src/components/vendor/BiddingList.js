@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function BiddingList() {
     return(
         <React.Fragment>
-            this is from app
+            this is from BiddingList page
         </React.Fragment>
     )
 }
 
-export default App;
+export default BiddingList;

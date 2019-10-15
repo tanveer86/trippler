@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App(){
+function Login() {
     return(
         <React.Fragment>
-            this is from app
+            this is from Login page
         </React.Fragment>
     )
 }
 
-export default App;
+export default Login;
