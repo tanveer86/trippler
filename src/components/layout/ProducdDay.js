@@ -22,7 +22,6 @@ function ProductDay(){
             </div>
         </React.Fragment>
     )
-
 }
 
 export default ProductDay;

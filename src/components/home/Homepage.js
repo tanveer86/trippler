@@ -7,6 +7,7 @@ import Intro from '../layout/Intro';
 import BestSellingProducts from '../layout/BestSellingProducts';
 import FeaturedProducts from '../layout/FeaturedProducts';
 import ProductDay from '../layout/ProducdDay';
+import TopBrands from '../layout/TopBrands';
 
 
 function Homepage() {
@@ -20,6 +21,7 @@ function Homepage() {
             <BestSellingProducts />
             <FeaturedProducts />
             <ProductDay />
+            <TopBrands />
         </React.Fragment>
     )
 }
