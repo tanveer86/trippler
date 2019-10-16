@@ -20,7 +20,7 @@ function Slider(){
                         </ul>
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-7 ml-2">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -48,13 +48,9 @@ function Slider(){
                             </a>
                         </div>
                     </div>
-                    <div class="col-3 text-right">
-                        <div>
-                            <img src="http://elmaliquor.com/wp-content/uploads/2016/03/irish-whiskey-Elma-Wine-Liquor-300x200.jpg" />
-                        </div>
-                        <div>
-                            <img src="https://foodanddrink.scotsman.com/wp-content/uploads/2018/01/1A-4-300x200.jpg" />
-                        </div>
+                    <div class="col-3">
+                        <img src="https://cdn.shopify.com/s/files/1/0058/8854/0731/products/Bira_FullWidth_B_2048x.jpg?v=1540494415" width="320" class=""/>
+                        <img src="https://paytm.com/offers/img/addmoneyupiWeb.jpg" width="320" />
                     </div>
                 </div>
             </div>

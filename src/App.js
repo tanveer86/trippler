@@ -38,7 +38,7 @@ class App extends React.Component{
                     <Route path="/user/live-bidding" exact component={LiveBidding} />
                     <Route path="/register" exact component={Register} />
                     <Route path="/login" exact component={Login} />
-                    <Route path="//vendor/payments" exact component={Payments} />
+                    <Route path="/vendor/payments" exact component={Payments} />
                     <Route path="/vendor/bidding-detail" exact component={BiddingDetail} />
                     <Route path="/vendor/bidding-list" exact component={BiddingList} />
                     <Route path="/vendor/order-detail" exact component={VendorOrderDetail} />
