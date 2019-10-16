@@ -16,7 +16,7 @@ function ProductDay(){
                         <h4 class="text-danger font-weight-bolder" style={{textDecoration: 'line-through'}}>MRP: Rs. 1300</h4>
                         <h3 class="text-success font-weight-bolder">Selling Price: Rs. 750</h3>
                         <p>IPA stands for Indian Pale Ale, which is brewed from hoppy, pale malts & wheat. The Bira IPA smells fresh and flowery, almost like potpourri, and tastes rather fruity, which is also what you'd call a man who orders it.</p>
-                        <button class="btn btn-danger font-weight-bolder">BUY THIS NOW</button>
+                        <button class="btn btn-danger font-weight-bolder btn-lg">BUY THIS NOW</button>
                     </div>
                 </div>
             </div>
