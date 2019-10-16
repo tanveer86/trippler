@@ -8,7 +8,7 @@ import BestSellingProducts from '../layout/BestSellingProducts';
 import FeaturedProducts from '../layout/FeaturedProducts';
 import ProductDay from '../layout/ProducdDay';
 import TopBrands from '../layout/TopBrands';
-
+import Footer from '../layout/Footer';
 
 function Homepage() {
     return(
@@ -22,6 +22,7 @@ function Homepage() {
             <FeaturedProducts />
             <ProductDay />
             <TopBrands />
+            <Footer />
         </React.Fragment>
     )
 }
