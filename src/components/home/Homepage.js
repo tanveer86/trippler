@@ -3,6 +3,10 @@ import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
 import Slider from '../layout/Slider';
+import Intro from '../layout/Intro';
+import BestSellingProducts from '../layout/BestSellingProducts';
+import FeaturedProducts from '../layout/FeaturedProducts';
+import ProductDay from '../layout/ProducdDay';
 
 
 function Homepage() {
@@ -12,6 +16,10 @@ function Homepage() {
             <Header />
             <Nav />
             <Slider />
+            <Intro />
+            <BestSellingProducts />
+            <FeaturedProducts />
+            <ProductDay />
         </React.Fragment>
     )
 }
