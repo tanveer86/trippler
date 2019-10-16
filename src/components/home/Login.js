@@ -1,9 +1,14 @@
 import React from 'react';
-
+import TopBar from '../layout/TopBar';
+import Header from '../layout/Header';
+import Nav from '../layout/Nav';
 function Login() {
     return(
      //this is from Login page
      <React.Fragment>
+          <TopBar />
+            <Header />
+            <Nav />
         <div className="container-fulid">
                     <div className="row mt-5">
                         <div class="col-sm-9 col-md-12 col-lg-5 mx-auto shadow">
