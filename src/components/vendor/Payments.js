@@ -1,17 +1,13 @@
 import React from 'react';
-import TopBar from '../layout/TopBar';
-import Header from '../layout/Header';
-import Nav from '../layout/Nav';
+import Navbar  from './Navbar'
 
 function Payments() {
     return(
         <React.Fragment>
-           <TopBar />
-            <Header />
-            <Nav />
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
+            <Navbar />
+            <div class="container ">
+                <div class="row mt-5">
+                    <div class="col text-center my-5">
                        <div class="py-4">
                         <h1 class="h3">Payments</h1>
                             <table class="table">
