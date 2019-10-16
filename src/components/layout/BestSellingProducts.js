@@ -3,7 +3,7 @@ import React from 'react';
 function BestSellingProducts() {
     return(
         <React.Fragment>
-            <div class="container-fulid">
+            <div class="container-fulid mt-3">
                 <div class="row">
                     <div class="col-12 bg-danger text-center text-white font-weight-bolder">
                         <p class="pt-3">BEST SELLING PRODUCTS AT TRIPPLER</p>

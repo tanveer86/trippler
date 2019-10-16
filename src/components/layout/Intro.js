@@ -5,7 +5,7 @@ function Intro(){
         <React.Fragment>
             <div class="container-fuild">
                 <div class="row text-center mt-5">
-                    <div class="col-12">
+                    <div class="col-12 mb-5">
                     <h2 class="text-center">Gum Ka Sathi RUM</h2>
                     </div>
                     <div class="col-4">
