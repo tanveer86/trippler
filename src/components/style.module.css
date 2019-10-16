@@ -1,0 +1,34 @@
+.topHeader{
+    display: flex;
+    padding: 30px;
+}
+
+.logo{
+    width: 10%;
+}
+
+.searchBar{
+    width: 80%;
+    margin-left: 200px;
+}
+
+.searchInput{
+    width: 500px;
+    height: 40px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.searchButton{
+    height: 40px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: #C93333;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid #C93333;
+}
+
+.topCart{
+    width: 10%;
+}
