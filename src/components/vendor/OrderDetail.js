@@ -36,7 +36,7 @@ function OrderDetail() {
         </div>
     </div>
     <hr class="col-10" ></hr>
-    <div className="container-fluid mt-5 offset-1">
+    <div class="container-fluid mt-5 offset-1">
         <div class="row">
             <div class="col-lg-10">
                 <p class="float-left font-weight-bold offset-1">Product Details</p>
@@ -46,7 +46,7 @@ function OrderDetail() {
         </div>
     </div>
     <hr class="col-10" ></hr>
-    <div className="container-fluid mt-3 offset-1">
+    <div class="container-fluid mt-3 offset-1">
         <div class="row">
             <div class="col-lg-10">
                 <div class="card">
@@ -67,7 +67,7 @@ function OrderDetail() {
         </div>
     </div>
 
-    <div className="container-fluid mt-3 offset-1">
+    <div class="container-fluid mt-3 offset-1">
         <div class="row">
             <div class="col-lg-10">
                 <div class="card">
@@ -87,7 +87,7 @@ function OrderDetail() {
             </div>
         </div>
     </div>
-    <div className="container-fluid mt-3 offset-1">
+    <div class="container-fluid mt-3 offset-1">
         <div class="row">
             <div class="col-lg-10">
                 <div class="card">
@@ -98,7 +98,7 @@ function OrderDetail() {
             </div>
         </div>
     </div>
-    <div className="container-fluid mt-3 offset-1">
+    <div class="container-fluid mt-3 offset-1">
         <div class="row">
             <div class="col-lg-10">
                 <div class="card">

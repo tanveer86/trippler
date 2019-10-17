@@ -26,21 +26,21 @@ function Payments() {
                                         <td>1134</td>
                                         <td>15-6-2019</td>
                                         <td> ₹1024</td>
-                                        <td><button className="btn btn-primary">View Details</button></td>
+                                        <td><button class="btn btn-primary">View Details</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>1129</td>
                                         <td>16-6-2019</td>
                                         <td> ₹102</td>
-                                        <td><button className="btn btn-primary">View Details</button></td>
+                                        <td><button class="btn btn-primary">View Details</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
                                         <td>1154</td>
                                         <td>19-6-2019</td>
                                         <td> ₹2400</td>
-                                        <td><button className="btn btn-primary">View Details</button></td>
+                                        <td><button class="btn btn-primary">View Details</button></td>
                                     </tr>
                                 </tbody>
                             </table>

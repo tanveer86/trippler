@@ -15,8 +15,8 @@ function LiveBidding() {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <h5 class="text-center text-success font-weight-bold">LIVE STATUS</h5>
-                                <span class="text-right mr-5">Time Remaining : <span class="text-danger font-weight-bold">MM:SS</span></span>
+                                <h3 class="text-center text-success font-weight-bold">LIVE STATUS</h3>
+                                <h3 class="text-right mr-5">Time Remaining : <span class="text-danger font-weight-bold">MM:SS</span></h3>
                                 <h2 class="text-center text-primary">Last Bidding Price : ₹ ZZZ by Vendor AAA BBB</h2>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ function LiveBidding() {
                         <h4 class="font-weight-bold ml-2 mb-4">Product Name</h4>
                         <h5 class="ml-2 mb-4">Product description</h5>
                         <h5 class="ml-2 mb-4">Volume: 375 mL</h5>
-                        <h5 class="ml-2 mb-4">Manufacture date:XX/YY</h5>
+                        <h5 class="ml-2 mb-4">Manufacture date:MM/YY</h5>
                         <h5 class="ml-2 mb-4">Alcohal Centent:X% V/V</h5>
                         <h4 class="font-weight-bold ml-2 mb-4">Original MRP ₹ XXY</h4>
                         <h4 class="font-weight-bold text-danger ml-2 mb-4">Last Bidding Price: ₹ ZZZ</h4>

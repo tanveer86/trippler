@@ -19,6 +19,7 @@ import VendorOrderList from './components/vendor/OrderList';
 import AddingImportProducts from './components/vendor/AddingImportProducts';
 import VendorRegistration from './components/home/VendorRegistration';
 import AdminAddProduct from './components/admin/AddProduct';
+import VendorHome from './components/vendor/VendorHome';
 
 
 class App extends React.Component{
@@ -46,6 +47,7 @@ class App extends React.Component{
                     <Route path="/vendor/import-products" exact component={AddingImportProducts} />
                     <Route path="/vendor-registration" exact component={VendorRegistration} />
                     <Route path="/admin/add-product" exact component={AdminAddProduct} />
+                    <Route path="/vendor/home" exact component={VendorHome} />
                 </Switch>
             </BrowserRouter>
         )

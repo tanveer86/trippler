@@ -32,7 +32,7 @@ function BiddingList() {
                                         <td> ₹1000</td>
                                         <td> ₹800</td>
                                         <td>Available</td>
-                                        <td><button className="btn btn-primary">Start Bidding</button></td>
+                                        <td><button class="btn btn-primary">Start Bidding</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
@@ -42,7 +42,7 @@ function BiddingList() {
                                         <td> ₹470</td>
                                         <td> ₹450</td>
                                         <td>Closed</td>
-                                        <td><button className="btn btn-primary">View Bidding</button></td>
+                                        <td><button class="btn btn-primary">View Bidding</button></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
@@ -52,7 +52,7 @@ function BiddingList() {
                                         <td> ₹250</td>
                                         <td> ₹450</td>
                                         <td>Won</td>
-                                        <td><button className="btn btn-primary">View Bidding</button></td>
+                                        <td><button class="btn btn-primary">View Bidding</button></td>
                                     </tr>
                                 </tbody>
                             </table>
