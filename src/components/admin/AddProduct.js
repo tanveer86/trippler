@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class AddProduct extends React.Component {
     constructor(){
@@ -128,4 +129,10 @@ class AddProduct extends React.Component {
     }
 }
 
-export default AddProduct;
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AddProduct)
