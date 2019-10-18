@@ -1,5 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {addingProduct} from '../../redux/actions/AllActions';
+let productsStorage = [];
+let getStorage = JSON.parse(localStorage.getItem('products'));
+
+if(getStorage){
+    productsStorage = [...getStorage]
+}
 
 class AddProduct extends React.Component {
     constructor(){
@@ -26,7 +33,22 @@ class AddProduct extends React.Component {
     inputSubmit = (userSubmited) => {
         userSubmited.preventDefault();
         this.setState({productName:'',productImage:'',productCategory:'',productBrand:'',productPrice:'',productVolume:'',productAlcohalContent:'',productExpiry:'',productDescription:''})
-        console.log(this.state)
+        let newProduct = {
+            productId: this.state.productId,
+            productName: this.state.productName,
+            productImage: this.state.productImage,
+            productCategory: this.state.productCategory,
+            productBrand: this.state.productBrand,
+            productPrice: this.state.productPrice,
+            productVolume: this.state.productVolume,
+            productAlcohalContent: this.state.productAlcohalContent,
+            productExpiry: this.state.productExpiry,
+            productDescription: this.state.productDescription,
+            productStatus: this.state.productStatus
+        }
+        this.props.addingProduct(newProduct);
+        productsStorage.push(newProduct);
+        localStorage.setItem("products",JSON.stringify(productsStorage));
     }
 
     render(){
@@ -55,11 +77,15 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productCategory" value={this.state.productCategory} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                                <option>Beer</option>
+                                                <option>Whiskey</option>
+                                                <option>Rum</option>
+                                                <option>Vodika</option>
+                                                <option>Wine</option>
+                                                <option>Tequila</option>
+                                                <option>Brandy</option>
+                                                <option>Gin</option>
+
                                              </select>
                                          </div>
                                      </div>
@@ -68,11 +94,12 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productBrand" value={this.state.productBrand} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                                <option>Kingfisher</option>
+                                                <option>Carlsberg</option>
+                                                <option>Black Dog</option>
+                                                <option>Signature</option>
+                                                <option>Blenders Pride</option>
+                                                <option>Royal Stag</option>
                                              </select>
                                          </div>
                                      </div>
@@ -87,11 +114,13 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productVolume" value={this.state.productVolume} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                                <option>30 Ml</option>
+                                                <option>60 Ml</option>
+                                                <option>90 Ml</option>
+                                                <option>180 Ml</option>
+                                                <option>375 Ml</option>
+                                                <option>750 Ml</option>
+                                                <option>1 Litrel</option>
                                              </select>
                                          </div>
                                      </div>
@@ -131,7 +160,7 @@ class AddProduct extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        addingProduct: productData => dispatch(addingProduct(productData))
     }
 }
 

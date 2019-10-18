@@ -1,6 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-function BestSellingProducts() {
+function BestSellingProducts(props) {
+    // console.log(props.allProducts.products)
+
+    let showProducts = props.allProducts.products.map(eachProduct => {
+        return(
+            <div class="col-3 font-weight-bolder">
+                <div class="card">
+                    <img src={eachProduct.productImage}  class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">{eachProduct.productName}</h5>
+                        <p class="card-text text-danger">Rs. {eachProduct.productPrice}</p>
+                        <button class="btn btn-danger font-weight-bolder">View Detail</button>
+                    </div>
+                </div>
+            </div>
+        )
+    })
+
+
     return(
         <React.Fragment>
             <div class="container-fulid mt-3">
@@ -12,50 +31,17 @@ function BestSellingProducts() {
             </div>
             <div class="container-fuild">
                 <div class="row text-center mt-3">
-                    <div class="col-3 font-weight-bolder">
-                        <div class="card">
-                            <img src="https://cheers.com.np/uploads/products/71663693367143172792803015998122162934656.png"  class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Kingfisher Strong 500 Ml</h5>
-                                <p class="card-text text-danger">Rs. 256</p>
-                                <button class="btn btn-danger font-weight-bolder">View Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 font-weight-bolder">
-                        <div class="card">
-                            <img src="https://cheers.com.np/uploads/products/71663693367143172792803015998122162934656.png"  class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Kingfisher Strong 500 Ml</h5>
-                                <p class="card-text text-danger">Rs. 256</p>
-                                <button class="btn btn-danger font-weight-bolder">View Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 font-weight-bolder">
-                        <div class="card">
-                            <img src="https://cheers.com.np/uploads/products/71663693367143172792803015998122162934656.png"  class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Kingfisher Strong 500 Ml</h5>
-                                <p class="card-text text-danger">Rs. 256</p>
-                                <button class="btn btn-danger font-weight-bolder">View Detail</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 font-weight-bolder">
-                        <div class="card">
-                            <img src="https://cheers.com.np/uploads/products/71663693367143172792803015998122162934656.png"  class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Kingfisher Strong 500 Ml</h5>
-                                <p class="card-text text-danger">Rs. 256</p>
-                                <button class="btn btn-danger font-weight-bolder">View Detail</button>
-                            </div>
-                        </div>
-                    </div>
+                    {showProducts}
                 </div>
             </div>
         </React.Fragment>
     )
 }
 
-export default BestSellingProducts;
+const mapStateToProps = (state) => {
+    return {
+        allProducts: state.products
+    }
+}
+
+export default connect(mapStateToProps)(BestSellingProducts)
