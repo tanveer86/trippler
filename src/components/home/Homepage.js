@@ -10,11 +10,11 @@ import ProductDay from '../layout/ProducdDay';
 import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 
-function Homepage() {
+function Homepage(props) {
     return(
         <React.Fragment>
             <TopBar />
-            <Header />
+            <Header props={props} />
             <Nav />
             <Slider />
             <Intro />

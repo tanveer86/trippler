@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function BestSellingProducts(props) {
     // console.log(props.allProducts.products)
@@ -7,15 +8,11 @@ function BestSellingProducts(props) {
     let showProducts = props.allProducts.products.map((eachProduct, index) => {
         if(index<4)
         return(
-            <div class="col-3 font-weight-bolder">
-                <div class="card">
-                    <img src={eachProduct.productImage}  class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">{eachProduct.productName}</h5>
-                        <p class="card-text text-danger">Rs. {eachProduct.productPrice}</p>
-                        <button class="btn btn-danger font-weight-bolder">View Detail</button>
-                    </div>
-                </div>
+            <div class="col-3 font-weight-bolder p-2 bg-white">
+                <img src={eachProduct.productImage} height="200"/>
+                <h5>{eachProduct.productName}</h5>
+                <p>Rs. {eachProduct.productPrice}</p>
+                <Link to={`product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
             </div>
         )
     })
@@ -30,7 +27,7 @@ function BestSellingProducts(props) {
                 </div>
             </div>
             <div class="container-fuild">
-                <div class="row text-center mt-3">
+                <div class="row text-center bg-light">
                     {showProducts}
                 </div>
             </div>

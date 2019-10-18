@@ -2,8 +2,6 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
-import CategorySort from '../layout/CategorySort';
-import CategoryProductList from '../layout/CategoryProductList';
 import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';

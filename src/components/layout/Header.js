@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from '../style.module.css'
+import SearchForm from './SearchForm';
 
-function Header() {
+function Header(props) {
     return(
         <React.Fragment>
             <div className={styles.topHeader}>
@@ -9,10 +10,7 @@ function Header() {
                     <img src="https://i.ibb.co/YQM7KJX/logo-title-dark.png" width="150" />
                 </div>
                 <div className={styles.searchBar}>
-                    <form>
-                        <input className={styles.searchInput} type="text" placeholder="Search for any product" required />
-                        <button className={styles.searchButton}>SEARCH NOW</button>
-                    </form>
+                    <SearchForm props={props} />
                 </div>
                 <div className={styles.topCart}>
                     CART

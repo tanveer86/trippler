@@ -2,16 +2,16 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
-import CategorySort from '../layout/CategorySort';
-import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-function Category(props) {
+function Search(props) {
+
+    let getQuery = JSON.parse(localStorage.getItem('searchQuery'));
 
     let showProducts = props.allProducts.products.map(eachProduct => {
-        if(props.match.params.productCategory == eachProduct.productCategory)
+        if(getQuery == eachProduct.productBrand || getQuery == eachProduct.productCategory || getQuery == eachProduct.productName)
         return(
             <div class="col-3 font-weight-bolder text-center mb-3">
                 <div class="card">
@@ -31,16 +31,9 @@ function Category(props) {
             <TopBar />
             <Header />
             <Nav />
-            <div class="container-fuild">
-                <div class="row"> 
-                    <div class="col-12">
-                        <img src="http://www.supergeona.com/wp-content/uploads/2016/12/drinks-1-1300x300.jpg" class="img-fluid" alt="Responsive image" />
-                    </div>
-                </div>
-            </div>
             <div class="container-fuild bg-light">
-                <div class="row">
-                    <CategorySort />
+            <p class="pt-3 text-danger font-weight-bolder">You searched for {getQuery}</p>
+                <div class="row mt-3">
                         {showProducts}
                     <Footer />
                 </div>
@@ -55,4 +48,4 @@ const mapStateToProps = (state) => {
     }
 } 
 
-export default connect(mapStateToProps)(Category)
+export default connect(mapStateToProps)(Search)

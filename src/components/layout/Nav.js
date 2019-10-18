@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../style.module.css'
+import {Link} from 'react-router-dom';
 
 function Nav() {
     return(
@@ -8,14 +8,14 @@ function Nav() {
                 <div class="row">
                     <div class="col-12 bg-danger font-weight-bolder p-2">
                         <nav class="nav">
-                            <a class="nav-link active text-white" href="#">Beer</a>
-                            <a class="nav-link text-white" href="#">Wine</a>
-                            <a class="nav-link text-white" href="#">Taquila</a>
-                            <a class="nav-link text-white" href="#">Rum</a>
-                            <a class="nav-link text-white" href="#">Vodika</a>
-                            <a class="nav-link text-white" href="#">Wiskey</a>
-                            <a class="nav-link text-white" href="#">Gin</a>
-                            <a class="nav-link text-white" href="#">Brandy</a>
+                            <Link class="nav-link active text-white" to="/beer">Beer</Link>
+                            <Link class="nav-link text-white" to="/whiskey">Whiskey</Link>
+                            <Link class="nav-link text-white" to="/wine">Wine</Link>
+                            <Link class="nav-link text-white" to="/taquila">Taquila</Link>
+                            <Link class="nav-link text-white" to="/rum">Rum</Link>
+                            <Link class="nav-link text-white" to="/vodika">Vodika</Link>
+                            <Link class="nav-link text-white" to="/gin">Gin</Link>
+                            <Link class="nav-link text-white" to="/brandy">Brandy</Link>
                         </nav>
                     </div>
                 </div>

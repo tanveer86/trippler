@@ -21,6 +21,7 @@ import AddingImportProducts from './components/vendor/AddingImportProducts';
 import VendorRegistration from './components/home/VendorRegistration';
 import AdminAddProduct from './components/admin/AddProduct';
 import VendorHome from './components/vendor/VendorHome';
+import Search from './components/home/Search';
 
 
 class App extends React.Component{
@@ -29,11 +30,11 @@ class App extends React.Component{
         return(
             <BrowserRouter>
                 <Switch>
-                    <Route path="/" exact component={Homepage} />
+                    <Route path="/" exact render={props => <Homepage {...props} /> } />
                     <Route path="/:productCategory" exact render={props => <Category {...props} /> } />
                     <Route path="/brand/:productBrand" exact render={props => <Brand {...props} /> } />
-                    <Route path="/category/product-detail" exact component={ProductDetail} />
-                    <Route path="/booking" exact component={Booking} />
+                    <Route path="/product/:productName" exact render={props => <ProductDetail {...props} /> } />
+                    <Route path="/booking/cart" exact component={Booking} />
                     <Route path="/sucess" exact component={Sucess} />
                     <Route path="/user" exact component={User} />
                     <Route path="/user/order-list" exact component={OrderList} />
@@ -50,6 +51,7 @@ class App extends React.Component{
                     <Route path="/vendor-registration" exact component={VendorRegistration} />
                     <Route path="/admin/add-product" exact component={AdminAddProduct} />
                     <Route path="/vendor/home" exact component={VendorHome} />
+                    <Route path="/search/results" exact component={Search} />
                 </Switch>
             </BrowserRouter>
         )
