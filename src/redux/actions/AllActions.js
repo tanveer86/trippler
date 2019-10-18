@@ -1,4 +1,5 @@
 const PRODUCT_ADDED = "PRODUCT_ADDED";
+const VENDOR_ADDED = "VENDOR_ADDED";
 
 const addingProduct = productData => {
     // console.log(productData)
@@ -18,4 +19,12 @@ const addingProduct = productData => {
     }
 }
 
-export {addingProduct}
+const addingVendor = vendorData => {
+    console.log(vendorData)
+    return {
+        type: VENDOR_ADDED,
+
+    }
+}
+
+export {addingProduct, addingVendor}

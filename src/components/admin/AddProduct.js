@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addingProduct} from '../../redux/actions/AllActions';
+
 let productsStorage = [];
 let getStorage = JSON.parse(localStorage.getItem('products'));
 

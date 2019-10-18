@@ -48,7 +48,7 @@ class App extends React.Component{
                     <Route path="/vendor/order-detail" exact component={VendorOrderDetail} />
                     <Route path="/vendor/order-list" exact component={VendorOrderList} />
                     <Route path="/vendor/import-products" exact component={AddingImportProducts} />
-                    <Route path="/vendor-registration" exact component={VendorRegistration} />
+                    <Route path="/vendor/registration" exact component={VendorRegistration} />
                     <Route path="/admin/add-product" exact component={AdminAddProduct} />
                     <Route path="/vendor/home" exact component={VendorHome} />
                     <Route path="/search/results" exact component={Search} />
