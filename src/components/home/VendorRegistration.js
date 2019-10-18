@@ -14,8 +14,8 @@ if(getStorage){
 }
 
 class VendorRegistration extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             vendorId: '',
             vendorName: '',
@@ -176,10 +176,16 @@ class VendorRegistration extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return{
+        allvendors: state.vendors
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addingVendor: vendorData => dispatch(addingVendor(vendorData))
     }
 }
 
-export default connect(null, mapDispatchToProps)(VendorRegistration)
+export default connect(mapStateToProps, mapDispatchToProps)(VendorRegistration)

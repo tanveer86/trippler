@@ -23,7 +23,18 @@ const addingVendor = vendorData => {
     console.log(vendorData)
     return {
         type: VENDOR_ADDED,
-
+        vendorId: vendorData.vendorId,
+        vendorName: vendorData.vendorName,
+        vendorEmail: vendorData.vendorEmail,
+        vendorMobile: vendorData.vendorMobile,
+        vendorPassword: vendorData.vendorPassword,
+        vendorArea: vendorData.vendorArea,
+        vendorCity: vendorData.vendorCity,
+        vendorPIN: vendorData.vendorPIN,
+        vendorLicense: vendorData.vendorLicense,
+        vendorGST: vendorData.vendorGST,
+        vendorLogo: vendorData.vendorLogo,
+        vendorStatus: vendorData.vendorStatus
     }
 }
 
