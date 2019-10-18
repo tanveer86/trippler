@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarCategories from './SidebarCategories';
 
 function Slider(){
     return(
@@ -10,14 +11,7 @@ function Slider(){
                         <div class="card-header text-center font-weight-bolder">
                             <h5>Popular Brands</h5>
                         </div>
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item">Kingfisher</li>
-                            <li class="list-group-item">Carlsberg</li>
-                            <li class="list-group-item">Black Dog</li>
-                            <li class="list-group-item">Signature</li>
-                            <li class="list-group-item">Blenders Pride</li>
-                            <li class="list-group-item">Royal Stag</li>
-                        </ul>
+                            <SidebarCategories />
                         </div>
                     </div>
                     <div class="col-7 ml-2">

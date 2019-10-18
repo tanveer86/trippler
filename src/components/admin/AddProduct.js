@@ -77,14 +77,14 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productCategory" value={this.state.productCategory} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>Beer</option>
-                                                <option>Whiskey</option>
-                                                <option>Rum</option>
-                                                <option>Vodika</option>
-                                                <option>Wine</option>
-                                                <option>Tequila</option>
-                                                <option>Brandy</option>
-                                                <option>Gin</option>
+                                                <option value="beer">Beer</option>
+                                                <option value="whiskey">Whiskey</option>
+                                                <option value="rum">Rum</option>
+                                                <option value="vodika">Vodika</option>
+                                                <option value="wine">Wine</option>
+                                                <option value="tequila">Tequila</option>
+                                                <option value="brandy">Brandy</option>
+                                                <option value="gin">Gin</option>
 
                                              </select>
                                          </div>
@@ -94,12 +94,12 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productBrand" value={this.state.productBrand} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>Kingfisher</option>
-                                                <option>Carlsberg</option>
-                                                <option>Black Dog</option>
-                                                <option>Signature</option>
-                                                <option>Blenders Pride</option>
-                                                <option>Royal Stag</option>
+                                                <option value="kingfisher">Kingfisher</option>
+                                                <option value="carlsberg">Carlsberg</option>
+                                                <option value="blackdog">Black Dog</option>
+                                                <option value="signature">Signature</option>
+                                                <option value="blenderspride">Blenders Pride</option>
+                                                <option value="royalstag">Royal Stag</option>
                                              </select>
                                          </div>
                                      </div>
@@ -114,13 +114,13 @@ class AddProduct extends React.Component {
                                          <div className="col-sm-9">
                                              <select name="productVolume" value={this.state.productVolume} class="form-control" onChange={this.inputChange}>
                                                 <option>Choose..</option>
-                                                <option>30 Ml</option>
-                                                <option>60 Ml</option>
-                                                <option>90 Ml</option>
-                                                <option>180 Ml</option>
-                                                <option>375 Ml</option>
-                                                <option>750 Ml</option>
-                                                <option>1 Litrel</option>
+                                                <option value="30ml">30 Ml</option>
+                                                <option value="60ml">60 Ml</option>
+                                                <option value="90ml">90 Ml</option>
+                                                <option value="180ml">180 Ml</option>
+                                                <option value="375ml">375 Ml</option>
+                                                <option value="750ml">750 Ml</option>
+                                                <option value="1litrel">1 Litrel</option>
                                              </select>
                                          </div>
                                      </div>

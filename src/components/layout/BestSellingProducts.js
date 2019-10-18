@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 function BestSellingProducts(props) {
     // console.log(props.allProducts.products)
 
-    let showProducts = props.allProducts.products.map(eachProduct => {
+    let showProducts = props.allProducts.products.map((eachProduct, index) => {
+        if(index<4)
         return(
             <div class="col-3 font-weight-bolder">
                 <div class="card">
@@ -18,7 +19,6 @@ function BestSellingProducts(props) {
             </div>
         )
     })
-
 
     return(
         <React.Fragment>

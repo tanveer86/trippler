@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import Homepage from './components/home/Homepage';
 import Category from './components/home/Category';
+import Brand from './components/home/Brand';
 import ProductDetail from './components/home/ProductDetail';
 import Booking from './components/home/Booking';
 import Sucess from './components/home/Sucess';
@@ -29,7 +30,8 @@ class App extends React.Component{
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Homepage} />
-                    <Route path="/category" exact component={Category} />
+                    <Route path="/:productCategory" exact render={props => <Category {...props} /> } />
+                    <Route path="/brand/:productBrand" exact render={props => <Brand {...props} /> } />
                     <Route path="/category/product-detail" exact component={ProductDetail} />
                     <Route path="/booking" exact component={Booking} />
                     <Route path="/sucess" exact component={Sucess} />

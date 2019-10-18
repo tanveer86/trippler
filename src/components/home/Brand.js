@@ -8,14 +8,14 @@ import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 
-function Category(props) {
+function Brand(props) {
 
     let showProducts = props.allProducts.products.map(eachProduct => {
-        if(props.match.params.productCategory == eachProduct.productCategory)
+        if(props.match.params.productBrand == eachProduct.productBrand)
         return(
             <div class="col-2 font-weight-bolder text-center mb-3">
                 <div class="card">
-                    <img src={eachProduct.productImage} class="card-img-top" alt={eachProduct.productName} title={eachProduct.productName} height="180" />
+                    <img src={eachProduct.productImage} class="card-img-top" alt="..." height="180" />
                     <div class="card-body">
                         <h5 class="card-title">{eachProduct.productName}</h5>
                         <p class="card-text text-danger">Rs. {eachProduct.productPrice}</p>
@@ -39,8 +39,7 @@ function Category(props) {
                 </div>
             </div>
             <div class="container-fuild bg-light">
-                <div class="row">
-                    <CategorySort />
+                <div class="row mt-3">
                         {showProducts}
                     <Footer />
                 </div>
@@ -55,4 +54,4 @@ const mapStateToProps = (state) => {
     }
 } 
 
-export default connect(mapStateToProps)(Category)
+export default connect(mapStateToProps)(Brand)
