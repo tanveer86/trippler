@@ -23,7 +23,8 @@ class AddProduct extends React.Component {
             productAlcohalContent: '',
             productExpiry: '',
             productDescription: '',
-            productStatus: true
+            productStatus: true,
+            productVendor: []
         }
     }
 
@@ -45,7 +46,8 @@ class AddProduct extends React.Component {
             productAlcohalContent: this.state.productAlcohalContent,
             productExpiry: this.state.productExpiry,
             productDescription: this.state.productDescription,
-            productStatus: this.state.productStatus
+            productStatus: this.state.productStatus,
+            productVendor: this.state.productVendor
         }
         this.props.addingProduct(newProduct);
         productsStorage.push(newProduct);
