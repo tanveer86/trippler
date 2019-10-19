@@ -6,12 +6,14 @@ import RelatedProducts from '../layout/RelatedProducts';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {addToCart} from '../../redux/actions/AllActions'
 
-
-function ProductDetail(props) {
-   console.log(props.match.url)
-
-    let showProduct = props.productData.products.find(product => product.productName == props.match.params.productName);
+class ProductDetail extends React.Component{
+    handleClick = (productId)=>{
+    this.props.addToCart(productId); 
+    }
+render(){
+    let showProduct = this.props.productData.products.find(product => product.productName == this.props.match.params.productName);
     return(
         <React.Fragment>
             <TopBar />
@@ -33,7 +35,7 @@ function ProductDetail(props) {
                                 <p class="card-text text-danger font-weight-bolder mt-2">Selling Price: Rs. {showProduct.productSellingPrice}</p>
                                 <p class="card-text">{showProduct.productDescription}</p>
                             </div>
-                            <button class="btn btn-danger mr-4 font-weight-bolder">Add to Cart</button>
+                            <button class="btn btn-danger mr-4" onClick={()=>{this.handleClick(showProduct.productId)}}>Add to Cart</button>
                             <button class="btn btn-success mr-4 font-weight-bolder">Bid Now</button>
                             </div>
                         </div>
@@ -44,14 +46,14 @@ function ProductDetail(props) {
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>Also Available at {props.vendorData.vendors.length} more sellers</h2>
+                        <h2>Also Available at {this.props.vendorData.vendors.length} more sellers</h2>
                     </div>
                 </div>
             </div>
             <div class="container-fuild">
                 <div class="row">
                     <div class="col-12 mt-3 pt-4 text-center border border-danger">
-                        {props.vendorData.vendors.map(eachVendor => {
+                        {this.props.vendorData.vendors.map(eachVendor => {
                             return(
                                 <div class="row">
                                     <div class="col-3 mt-2">
@@ -85,12 +87,18 @@ function ProductDetail(props) {
         </React.Fragment>
     )
 }
-
+}
 const mapStateToProps = (state) => {
     return {
         productData: state.products,
         vendorData: state.vendors
     }
 }
+const mapDispatchToProps= (dispatch)=>{
+    
+    return{
+        addToCart: (productId)=>{dispatch(addToCart(productId))}
+    }
+}
 
-export default connect(mapStateToProps)(ProductDetail)
+export default connect(mapStateToProps,mapDispatchToProps)(ProductDetail)

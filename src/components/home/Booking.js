@@ -2,7 +2,8 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
-
+import {connect} from 'react-redux';
+import { removeItem,addQuantity,subtractQuantity} from '../../redux/actions/AllActions'
 class Booking extends React.Component {
     constructor(){
         super();
@@ -37,8 +38,36 @@ class Booking extends React.Component {
         orderSubmit.preventDefault();
         console.log(orderSubmit)
     }
+    handleRemove = (productId)=>{
+        this.props.removeItem(productId);
+    }
+    handleAddQuantity = (productId)=>{
+        this.props.addQuantity(productId);
+    }
+    handleSubtractQuantity = (productId)=>{
+        this.props.subtractQuantity(productId);
+    }
 
     render() {
+        let showCartProducts = this.props.addToCart.addedItems.map((eachProduct) => {
+            return(   
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-4 text-center" key={eachProduct.productId}>
+                        <img src={eachProduct.productImage} height="150"/>
+                        <h4 class="mt-2">{eachProduct.productName}</h4>
+                        <p class="font-weight-bolder">{eachProduct.productSellingPrice}</p>
+                        
+                        
+                        <div class="float-left ml-2"><img src="https://www.freeiconspng.com/uploads/arrow-down-icon-png-10.png" width="40" height="20" onClick={()=>{this.handleSubtractQuantity(eachProduct.productId)}}></img></div>
+                        <p class="float-left">Quantity: {eachProduct.quantity}</p>
+                        <div class="float-left "><img src="https://i.ya-webdesign.com/images/arrow-up-icon-png.png" width="40" height="20"  onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
+                        <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
+                    </div>
+                </div>
+            </div>
+            )
+        })
         return(
             <React.Fragment>
                 <TopBar />
@@ -58,16 +87,7 @@ class Booking extends React.Component {
                                 </div>
     
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-3 text-center">
-                                            <img src="https://i.ibb.co/jTp0gvS/beefr.png" height="150"/>
-                                            <h4 class="mt-2">Product Name</h4>
-                                            <p class="font-weight-bolder">Rs. 530</p>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-link btn-danger text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continue</button>
-                                </div>
+                                {showCartProducts}
                                 </div>
                             </div>
                             <div class="card">
@@ -178,10 +198,10 @@ class Booking extends React.Component {
                         </div>
                         <div class="col-3 bg-danger text-white font-weight-bolder">
                             <h3 class="text-center p-3">Your Cart Details</h3>
-                            <p>Total Items: 2</p>
+                            <p>Total Items: {this.props.addToCart.addedItems.length}</p>
                             <p>Delivery Charges: Free</p>
                             <p>Purchasing From: Madhuloka</p>
-                            <p>Total Price: Rs. 600</p>
+                            <p>Total Price: Rs. {this.props.addToCart.total}</p>
                         </div>
                     </div>
                 </div>
@@ -189,5 +209,16 @@ class Booking extends React.Component {
         )
     }
 }
-
-export default Booking;
+const mapStateToProps = (state) => {
+    return {
+        addToCart: state.addedToCart,
+    }
+}
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        removeItem: (productId)=>{dispatch(removeItem(productId))},
+        addQuantity: (productId)=>{dispatch(addQuantity(productId))},
+        subtractQuantity: (productId)=>{dispatch(subtractQuantity(productId))}
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Booking)

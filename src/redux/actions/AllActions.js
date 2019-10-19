@@ -1,6 +1,10 @@
 const PRODUCT_ADDED = "PRODUCT_ADDED";
 const VENDOR_ADDED = "VENDOR_ADDED";
-const USER_ADDED = "USER_ADDED"
+const USER_ADDED = "USER_ADDED";
+const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_ITEM = 'REMOVE_ITEM';
+const SUB_QUANTITY = 'SUB_QUANTITY';
+const ADD_QUANTITY = 'ADD_QUANTITY';
 
 const addingProduct = productData => {
     // console.log(productData)
@@ -57,5 +61,31 @@ const addingUser = userData => {
 
     }
 }
+const addToCart= (productId)=>{
+    console.log(productId)
+    return{
+        type: ADD_TO_CART,
+        productId: productId,
+    }
+}
+export const removeItem=(productId)=>{
+    return{
+        type: REMOVE_ITEM,
+        productId
+    }
+}
+export const subtractQuantity=(productId)=>{
+    return{
+        type: SUB_QUANTITY,
+        productId
+    }
+}
 
-export {addingProduct, addingVendor, addingUser}
+export const addQuantity=(productId)=>{
+    return{
+        type: ADD_QUANTITY,
+        productId
+    }
+}
+
+export {addingProduct, addingVendor, addingUser, addToCart}
