@@ -35,7 +35,7 @@ class App extends React.Component{
                     <Route path="/brand/:productBrand" exact render={props => <Brand {...props} /> } />
                     <Route path="/product/:productName" exact render={props => <ProductDetail {...props} /> } />
                     <Route path="/booking/cart" exact component={Booking} />
-                    <Route path="/sucess" exact component={Sucess} />
+                    <Route path="/user/sucess" exact component={Sucess} />
                     <Route path="/user" exact component={User} />
                     <Route path="/user/order-list" exact component={OrderList} />
                     <Route path="/user/order-detail" exact component={OrderDetail} />

@@ -18,7 +18,8 @@ function Search(props) {
                     <img src={eachProduct.productImage} class="card-img-top" alt={eachProduct.productName} title={eachProduct.productName} height="250" />
                     <div class="card-body">
                         <h5 class="card-title">{eachProduct.productName}</h5>
-                        <p class="card-text text-danger">Rs. {eachProduct.productPrice}</p>
+                        <p class="card-text text-danger">MRP Rs. {eachProduct.productMRP}</p>
+                        <p class="card-text text-danger">Rs. {eachProduct.productSellingPrice}</p>
                         <Link to={`product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
                     </div>
                 </div>

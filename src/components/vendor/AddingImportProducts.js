@@ -8,7 +8,7 @@ class AddingImportProducts extends React.Component {
     constructor(){
         super();
         this.state = {
-            vendorId: 'anuj',
+            vendorName: 'Tanveer',
             discountPercentage: null
         }
     }
@@ -23,27 +23,25 @@ class AddingImportProducts extends React.Component {
             getStorage[i].productVendor.push(this.state)
             
             //amit helped to calculate this
-            let lowestPrice = getStorage[i].productMRP - (getStorage[i].productMRP*this.state.discountPercentage*0.01)
-            getStorage[i].productSellingPrice = lowestPrice;
-            localStorage.setItem("products",JSON.stringify(getStorage));
+            // let lowestPrice = getStorage[i].productMRP - (getStorage[i].productMRP*this.state.discountPercentage*0.01)
+            // getStorage[i].productSellingPrice = lowestPrice;
+            // localStorage.setItem("products",JSON.stringify(getStorage));
             for(var t = 0; t < getStorage[i].productVendor.length; t++)
             {
                 arr.push(getStorage[i].productVendor[t].discountPercentage)
-              // (100-arr.map(a=>parseInt(a.discountPercentage)).reduce(a,c)=>a<c?c:a))*mrp/100
+            
             }
         }
         arr.map(a=>Number(a));
         var maxDis=Math.max(...arr)
         for(var i = 0; i < getStorage.length; i++){
-            getStorage[i].productVendor.push(this.state)
+            // getStorage[i].productVendor.push(this.state)
             
             //amit helped to calculate this
             let lowestPrice = getStorage[i].productMRP - (getStorage[i].productMRP*maxDis*0.01)
             getStorage[i].productSellingPrice = lowestPrice;
             localStorage.setItem("products",JSON.stringify(getStorage));
         }
-        
-        
     }
 
     render(){

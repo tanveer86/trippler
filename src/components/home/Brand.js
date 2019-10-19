@@ -13,10 +13,11 @@ function Brand(props) {
         return(
             <div class="col-2 font-weight-bolder text-center mb-3">
                 <div class="card">
-                    <img src={eachProduct.productImage} class="card-img-top" alt="..." height="180" />
+                    <img src={eachProduct.productImage} class="card-img-top" alt={eachProduct.productName} title={eachProduct.productName} height="180" />
                     <div class="card-body">
                         <h5 class="card-title">{eachProduct.productName}</h5>
-                        <p class="card-text text-danger">Rs. {eachProduct.productPrice}</p>
+                        <p class="card-text text-danger">MRP Rs. {eachProduct.productMRP}</p>
+                        <p class="card-text text-danger">Rs. {eachProduct.productSellingPrice}</p>
                         <button class="btn btn-danger font-weight-bolder">View Detail</button>
                     </div>
                 </div>

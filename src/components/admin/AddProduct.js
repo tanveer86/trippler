@@ -13,7 +13,7 @@ class AddProduct extends React.Component {
     constructor(){
         super()
         this.state = {
-            productId: '',
+            productId: 1,
             productName: '',
             productImage: '',
             productCategory: '',
@@ -37,7 +37,7 @@ class AddProduct extends React.Component {
         userSubmited.preventDefault();
         this.setState({productName:'',productImage:'',productCategory:'',productBrand:'',productMRP:'',productVolume:'',productAlcohalContent:'',productMFGDate:'',productDescription:''})
         let newProduct = {
-            productId: this.state.productId,
+            productId: this.state.productId++,
             productName: this.state.productName,
             productImage: this.state.productImage,
             productCategory: this.state.productCategory,

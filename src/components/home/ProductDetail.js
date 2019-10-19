@@ -7,7 +7,6 @@ import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 
 function ProductDetail(props) {
-    
 
     let showProduct = props.productData.products.find(product => product.productName == props.match.params.productName);
     return(
@@ -25,15 +24,15 @@ function ProductDetail(props) {
                             <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{showProduct.productName}</h5>
-                                <p class="card-text">Brand: {showProduct.productBrand}</p>
-                                <p class="card-text">Type: {showProduct.productCategory}</p>
-                                <p class="card-text">MRP: {showProduct.productPrice}</p>
-                                <p class="card-text">Selling Price: Rs. 180</p>
+                                <p class="card-text text-capitalize">Brand: {showProduct.productBrand}</p>
+                                <p class="card-text text-capitalize">Type: {showProduct.productCategory}</p>
+                                <del><p class="card-text text-danger" style={{textDecoration: 'linethrough'}}>MRP: Rs. {showProduct.productMRP}</p></del>
+                                <p class="card-text text-danger font-weight-bolder mt-2">Selling Price: Rs. {showProduct.productSellingPrice}</p>
                                 <p class="card-text">{showProduct.productDescription}</p>
                             </div>
-                            <button class="btn btn-danger mr-4">Add to Cart</button>
-                            <button class="btn btn-success mr-4">Bid Now</button>
-                            <button class="btn btn-dark">See 8 More Sellers</button>
+                            <button class="btn btn-danger mr-4 font-weight-bolder">Add to Cart</button>
+                            <button class="btn btn-success mr-4 font-weight-bolder">Bid Now</button>
+                            <button class="btn btn-dark font-weight-bolder">See 1 More Sellers</button>
                             </div>
                         </div>
                     </div>
@@ -43,67 +42,39 @@ function ProductDetail(props) {
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>Also Available at these Sellers</h2>
+                        <h2>Also Available at {props.vendorData.vendors.length} more sellers</h2>
                     </div>
                 </div>
             </div>
             <div class="container-fuild">
                 <div class="row">
-                    <div class="col-6 p-3 mt-5 text-center border border-danger">
-                        <div class="row">
-                            <div class="col-3 mt-3">
-                                <img src="https://via.placeholder.com/350x150" width="150"/>
-                            </div>
-                            <div class="col-6 mt-3">
-                                <p>Product Name</p>
-                                <p>Selling Price: Rs. 500</p>
-                            </div>
-                            <div class="col-3 mt-4">
-                                <button class="btn btn-danger">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 p-3 mt-5 text-center border border-danger">
-                        <div class="row">
-                            <div class="col-3 mt-3">
-                                <img src="https://via.placeholder.com/350x150" width="150"/>
-                            </div>
-                            <div class="col-6 mt-3">
-                                <p>Product Name</p>
-                                <p>Selling Price: Rs. 500</p>
-                            </div>
-                            <div class="col-3 mt-4">
-                                <button class="btn btn-danger">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 p-3 text-center border border-danger">
-                        <div class="row">
-                            <div class="col-3 mt-3">
-                                <img src="https://via.placeholder.com/350x150" width="150"/>
-                            </div>
-                            <div class="col-6 mt-3">
-                                <p>Product Name</p>
-                                <p>Selling Price: Rs. 500</p>
-                            </div>
-                            <div class="col-3 mt-4">
-                                <button class="btn btn-danger">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 p-3 text-center border border-danger">
-                        <div class="row">
-                            <div class="col-3 mt-3">
-                                <img src="https://via.placeholder.com/350x150" width="150"/>
-                            </div>
-                            <div class="col-6 mt-3">
-                                <p>Product Name</p>
-                                <p>Selling Price: Rs. 500</p>
-                            </div>
-                            <div class="col-3 mt-4">
-                                <button class="btn btn-danger">Buy Now</button>
-                            </div>
-                        </div>
+                    <div class="col-12 mt-3 pt-4 text-center border border-danger">
+                        {props.vendorData.vendors.map(eachVendor => {
+                            return(
+                                <div class="row">
+                                    <div class="col-3 mt-2">
+                                        <img src={eachVendor.vendorLogo} width="150"/>
+                                    </div>
+                                    <div class="col-3">
+                                        <ul style={{listStyle:'none'}}>
+                                            <li class="text-danger font-weight-bolder">SELLER DETAILS</li>
+                                            <li>{eachVendor.vendorName}</li>
+                                            <li>{eachVendor.vendorArea}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3">
+                                        <ul style={{listStyle:'none'}}>
+                                            <li class="text-danger font-weight-bolder">PRODUCT DETAILS</li>
+                                            <li>{showProduct.productName}</li>
+                                            <li>Selling Price: Rs. {showProduct.productSellingPrice}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 mt-2">
+                                        <button class="btn btn-danger btn-lg font-weight-bolder">Buy Now</button>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
@@ -115,7 +86,8 @@ function ProductDetail(props) {
 
 const mapStateToProps = (state) => {
     return {
-        productData: state.products
+        productData: state.products,
+        vendorData: state.vendors
     }
 }
 
