@@ -104,7 +104,7 @@ class Register extends React.Component {
                                     <div class="from-group row mb-2 text-center mt-3">
                                         <label class="col-sm-3 col-form-label"></label>
                                         <div class="col-sm-9">
-                                            <button type="submit" class="btn btn-primary w-100">Register Now</button>
+                                            <button type="submit" class="btn btn-primary w-100">Register Now Here</button>
                                         </div>
                                     </div>
                                 </form>
