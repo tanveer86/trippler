@@ -10,12 +10,14 @@ const addingProduct = productData => {
         productImage: productData.productImage,
         productCategory: productData.productCategory,
         productBrand: productData.productBrand,
-        productPrice: productData.productPrice,
+        productMFGDate: productData.productMFGDate,
         productVolume: productData.productVolume,
         productAlcohalContent: productData.productAlcohalContent,
         productExpiry: productData.productExpiry,
         productDescription: productData.productDescription,
-        productStatus: productData.productStatus
+        productStatus: productData.productStatus,
+        productVendor: productData.productVendor,
+        productSellingPrice: productData.productSellingPrice
     }
 }
 

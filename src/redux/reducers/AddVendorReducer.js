@@ -26,7 +26,8 @@ export default (state = initState, action) => {
                     vendorLicense: action.vendorLicense,
                     vendorGST: action.vendorGST,
                     vendorLogo: action.vendorLogo,
-                    vendorStatus: action.vendorStatus
+                    vendorStatus: action.vendorStatus,
+                    productVendor: action.productVendor
                 };
             return {
                 ...state,

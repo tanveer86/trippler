@@ -11,7 +11,8 @@ function BestSellingProducts(props) {
             <div class="col-3 font-weight-bolder p-2 bg-white">
                 <img src={eachProduct.productImage} height="200"/>
                 <h5>{eachProduct.productName}</h5>
-                <p>Rs. {eachProduct.productPrice}</p>
+                <p>MRP Rs. {eachProduct.productMRP}</p>
+                <p>Selling Rs. {eachProduct.productSellingPrice}</p>
                 <Link to={`product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
             </div>
         )

@@ -18,13 +18,14 @@ class AddProduct extends React.Component {
             productImage: '',
             productCategory: '',
             productBrand: '',
-            productPrice: '',
+            productMRP: '',
             productVolume: '',
             productAlcohalContent: '',
-            productExpiry: '',
+            productMFGDate: '',
             productDescription: '',
             productStatus: true,
-            productVendor: []
+            productVendor: [],
+            productSellingPrice: null
         }
     }
 
@@ -34,20 +35,21 @@ class AddProduct extends React.Component {
 
     inputSubmit = (userSubmited) => {
         userSubmited.preventDefault();
-        this.setState({productName:'',productImage:'',productCategory:'',productBrand:'',productPrice:'',productVolume:'',productAlcohalContent:'',productExpiry:'',productDescription:''})
+        this.setState({productName:'',productImage:'',productCategory:'',productBrand:'',productMRP:'',productVolume:'',productAlcohalContent:'',productMFGDate:'',productDescription:''})
         let newProduct = {
             productId: this.state.productId,
             productName: this.state.productName,
             productImage: this.state.productImage,
             productCategory: this.state.productCategory,
             productBrand: this.state.productBrand,
-            productPrice: this.state.productPrice,
+            productMRP: this.state.productMRP,
             productVolume: this.state.productVolume,
             productAlcohalContent: this.state.productAlcohalContent,
-            productExpiry: this.state.productExpiry,
+            productMFGDate: this.state.productMFGDate,
             productDescription: this.state.productDescription,
             productStatus: this.state.productStatus,
-            productVendor: this.state.productVendor
+            productVendor: this.state.productVendor,
+            productSellingPrice: this.state.productSellingPrice
         }
         this.props.addingProduct(newProduct);
         productsStorage.push(newProduct);
@@ -109,7 +111,7 @@ class AddProduct extends React.Component {
                                      <div className="from-group row mb-2">
                                          <label className="col-sm-3 col-form-label">Price</label>
                                          <div className="col-sm-9">
-                                            <input name="productPrice" value={this.state.productPrice} type="number" className="form-control" placeholder="Price" required onChange={this.inputChange} />
+                                            <input name="productMRP" value={this.state.productPrice} type="number" className="form-control" placeholder="Price" required onChange={this.inputChange} />
                                          </div>
                                      </div>
                                      <div className="from-group row mb-2">
@@ -136,7 +138,7 @@ class AddProduct extends React.Component {
                                      <div className="from-group row mb-2">
                                          <label className="col-sm-3 col-form-label">Manufacture Date</label>
                                          <div className="col-sm-9">
-                                            <input name="productExpiry" value={this.state.productExpiry} type="date" className="form-control" placeholder="Alcohal Content" required onChange={this.inputChange} />
+                                            <input name="productMFGDate" value={this.state.productExpiry} type="date" className="form-control" placeholder="Alcohal Content" required onChange={this.inputChange} />
                                          </div>
                                      </div>
                                      <div className="from-group row mb-2">

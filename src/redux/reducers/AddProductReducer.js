@@ -20,12 +20,13 @@ export default (state = initState, action) => {
                 productImage: action.productImage,
                 productCategory: action.productCategory,
                 productBrand: action.productBrand,
-                productPrice: action.productPrice,
+                productMFGDate: action.productMFGDate,
                 productVolume: action.productVolume,
                 productAlcohalContent: action.productAlcohalContent,
                 productExpiry: action.productExpiry,
                 productDescription: action.productDescription,
-                productStatus: action.productStatus
+                productStatus: action.productStatus,
+                productSellingPrice: action.productSellingPrice
             };
             return {
                 ...state,
