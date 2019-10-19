@@ -3,7 +3,8 @@ import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
 import {connect} from 'react-redux';
-import { removeItem,addQuantity,subtractQuantity} from '../../redux/actions/AllActions'
+import { removeItem, addQuantity, subtractQuantity } from '../../redux/actions/AllActions';
+
 class Booking extends React.Component {
     constructor(){
         super();
@@ -17,7 +18,6 @@ class Booking extends React.Component {
             userPassword: '',
             userStatus: '',
             userOrderHistory: '',
-
         }
     }
 
@@ -50,20 +50,45 @@ class Booking extends React.Component {
 
     render() {
         let showCartProducts = this.props.addToCart.addedItems.map((eachProduct) => {
-            return(   
-                <div class="card-body">
-                <div class="row">
-                    <div class="col-4 text-center" key={eachProduct.productId}>
-                        <img src={eachProduct.productImage} height="150"/>
-                        <h4 class="mt-2">{eachProduct.productName}</h4>
-                        <p class="font-weight-bolder">{eachProduct.productSellingPrice}</p>
-                        <div class="float-left ml-2"><img src="https://img.icons8.com/cotton/2x/minus--v2.png" width="40" height="40" onClick={()=>{this.handleSubtractQuantity(eachProduct.productId)}}></img></div>
-                        <p class="float-left">Quantity: {eachProduct.quantity}</p>
-                        <div class="float-left "><img src="https://img.icons8.com/cotton/2x/plus--v2.png" width="40" height="40" onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
-                        <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
-                    </div>
+            return(
+                <div class="col-4 text-center" key={eachProduct.productId}>
+                    <img src={eachProduct.productImage} height="150"/>
+                    <h4 class="mt-2">{eachProduct.productName}</h4>
+                    <p class="font-weight-bolder">{eachProduct.productSellingPrice}</p>
+                    <div class="float-left ml-2"><img src="https://img.icons8.com/cotton/2x/minus--v2.png" width="40" height="40" onClick={()=>{this.handleSubtractQuantity(eachProduct.productId)}}></img></div>
+                    <p class="float-left">Quantity: {eachProduct.quantity}</p>
+                    <div class="float-left "><img src="https://img.icons8.com/cotton/2x/plus--v2.png" width="40" height="40" onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
+                    <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
                 </div>
+
+<div class="col-12 mt-3 pt-4 text-center border border-danger">
+{this.props.vendorData.vendors.map(eachVendor => {
+    return(
+        <div class="row">
+            <div class="col-3 mt-2">
+                <img src={eachVendor.vendorLogo} width="150" height="90"/>
             </div>
+            <div class="col-3">
+                <ul style={{listStyle:'none'}}>
+                    <li class="text-danger font-weight-bolder">SELLER DETAILS</li>
+                    <li>{eachVendor.vendorName}</li>
+                    <li>{eachVendor.vendorArea}</li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <ul style={{listStyle:'none'}}>
+                    <li class="text-danger font-weight-bolder">PRODUCT DETAILS</li>
+                    <li>{showProduct.productName}</li>
+                    <li>Selling Price: Rs. {showProduct.productSellingPrice}</li>
+                </ul>
+            </div>
+            <div class="col-3 mt-2">
+                <button class="btn btn-danger btn-lg font-weight-bolder">Buy Now</button>
+            </div>
+        </div>
+    )
+})}
+</div>
             )
         })
         return(
@@ -84,8 +109,13 @@ class Booking extends React.Component {
                                 </h2>
                                 </div>
     
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                {showCartProducts}
+                                <div id="collapseOne" class="collapse show text-center" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            {showCartProducts}
+                                        </div>
+                                    </div>
+                                    <button>outcard</button>
                                 </div>
                             </div>
                             <div class="card">
