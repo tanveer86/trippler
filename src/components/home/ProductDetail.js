@@ -2,11 +2,14 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
-import BestSellingProducts from '../layout/BestSellingProducts';
+import RelatedProducts from '../layout/RelatedProducts';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+
 
 function ProductDetail(props) {
+   console.log(props.match.url)
 
     let showProduct = props.productData.products.find(product => product.productName == props.match.params.productName);
     return(
@@ -32,7 +35,6 @@ function ProductDetail(props) {
                             </div>
                             <button class="btn btn-danger mr-4 font-weight-bolder">Add to Cart</button>
                             <button class="btn btn-success mr-4 font-weight-bolder">Bid Now</button>
-                            <button class="btn btn-dark font-weight-bolder">See 1 More Sellers</button>
                             </div>
                         </div>
                     </div>
@@ -78,7 +80,7 @@ function ProductDetail(props) {
                     </div>
                 </div>
             </div>
-            <BestSellingProducts />
+            <RelatedProducts />
             <Footer />
         </React.Fragment>
     )

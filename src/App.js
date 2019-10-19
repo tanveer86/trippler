@@ -36,11 +36,11 @@ class App extends React.Component{
                     <Route path="/product/:productName" exact render={props => <ProductDetail {...props} /> } />
                     <Route path="/booking/cart" exact component={Booking} />
                     <Route path="/user/sucess" exact component={Sucess} />
-                    <Route path="/user" exact component={User} />
+                    <Route path="/user/profile" exact component={User} />
                     <Route path="/user/order-list" exact component={OrderList} />
                     <Route path="/user/order-detail" exact component={OrderDetail} />
                     <Route path="/user/live-bidding" exact component={LiveBidding} />
-                    <Route path="/register" exact component={Register} />
+                    <Route path="/user/register" exact render={props => <Register {...props} /> } />
                     <Route path="/login" exact component={Login} />
                     <Route path="/vendor/payments" exact component={Payments} />
                     <Route path="/vendor/bidding-detail" exact component={BiddingDetail} />

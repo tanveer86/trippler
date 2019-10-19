@@ -4,10 +4,18 @@ import Nav from '../layout/Nav';
 import TopBar from '../layout/TopBar';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
+import {addingUser} from '../../redux/actions/AllActions';
+
+let usersStorage = [];
+let getStorage = JSON.parse(localStorage.getItem('users'));
+
+if(getStorage){
+    usersStorage = [...getStorage]
+}
 
 class Register extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             userId: '',
             userName: '',
@@ -17,7 +25,7 @@ class Register extends React.Component {
             userPassword: '',
             userAadhar: '',
             userStatus: true,
-            userOrderHistory: '',
+            userOrderHistory: []
         }
     }
 
@@ -27,7 +35,22 @@ class Register extends React.Component {
 
     inputSubmit = (userSubmit) => {
         userSubmit.preventDefault();
-        console.log(this.state)
+        let newUser = {
+            userId: this.state.userId,
+            userName: this.state.userName,
+            userDOB: this.state.userDOB,
+            userEmail: this.state.userEmail,
+            userMobile: this.state.userMobile,
+            userPassword: this.state.userPassword,
+            userAadhar: this.state.userAadhar,
+            userStatus: this.state.userStatus,
+            userOrderHistory: this.state.userOrderHistory
+        }
+        this.props.addingUser(newUser);
+        usersStorage.push(newUser);
+        localStorage.setItem("users",JSON.stringify(usersStorage));
+        this.props.history.push('/user/profile')
+        // console.log(this.state)
     }
 
     render(){
@@ -97,6 +120,7 @@ class Register extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        addingUser: userData => (dispatch(addingUser(userData)))
 
     }
 }

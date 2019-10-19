@@ -1,5 +1,6 @@
 const PRODUCT_ADDED = "PRODUCT_ADDED";
 const VENDOR_ADDED = "VENDOR_ADDED";
+const USER_ADDED = "USER_ADDED"
 
 const addingProduct = productData => {
     // console.log(productData)
@@ -22,7 +23,7 @@ const addingProduct = productData => {
 }
 
 const addingVendor = vendorData => {
-    console.log(vendorData)
+    // console.log(vendorData)
     return {
         type: VENDOR_ADDED,
         vendorId: vendorData.vendorId,
@@ -40,4 +41,21 @@ const addingVendor = vendorData => {
     }
 }
 
-export {addingProduct, addingVendor}
+const addingUser = userData => {
+    // console.log(userData)
+    return {
+        type: USER_ADDED,
+        userId: userData.userId,
+        userName: userData.userName,
+        userDOB: userData.userDOB,
+        userEmail: userData.userEmail,
+        userMobile: userData.userMobile,
+        userPassword: userData.userPassword,
+        userAadhar: userData.userAadhar,
+        userStatus: userData.userStatus,
+        userOrderHistory: userData.userOrderHistory
+
+    }
+}
+
+export {addingProduct, addingVendor, addingUser}
