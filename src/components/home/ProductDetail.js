@@ -7,13 +7,20 @@ import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {addToCart} from '../../redux/actions/AllActions'
-
+var discountArr=[];
 class ProductDetail extends React.Component{
     handleClick = (productId)=>{
     this.props.addToCart(productId); 
     }
 render(){
     let showProduct = this.props.productData.products.find(product => product.productName == this.props.match.params.productName);
+    console.log(showProduct.productVendor[1].discountPercentage)
+    for(var i=0;i<showProduct.productVendor.length;i++)
+    {
+       var sellingPrice=Number(showProduct.productMRP)-Number(showProduct.productVendor[i].discountPercentage)*Number(showProduct.productMRP)*0.01;
+       discountArr.push(sellingPrice)   
+    }
+    
     return(
         <React.Fragment>
             <TopBar />
@@ -53,7 +60,7 @@ render(){
             <div class="container-fuild">
                 <div class="row">
                     <div class="col-12 mt-3 pt-4 text-center border border-danger">
-                        {this.props.vendorData.vendors.map(eachVendor => {
+                        {this.props.vendorData.vendors.map((eachVendor,index) => {
                             return(
                                 <div class="row">
                                     <div class="col-3 mt-2">
@@ -70,7 +77,7 @@ render(){
                                         <ul style={{listStyle:'none'}}>
                                             <li class="text-danger font-weight-bolder">PRODUCT DETAILS</li>
                                             <li>{showProduct.productName}</li>
-                                            <li>Selling Price: Rs. {showProduct.productSellingPrice}</li>
+                                            <li>Selling Price: Rs. {discountArr[index]}</li>
                                         </ul>
                                     </div>
                                     <div class="col-3 mt-2">
