@@ -22,6 +22,7 @@ import VendorRegistration from './components/home/VendorRegistration';
 import AdminAddProduct from './components/admin/AddProduct';
 import VendorHome from './components/vendor/VendorHome';
 import Search from './components/home/Search';
+import VendorLogin from './components/home/VendorLogin';
 
 
 class App extends React.Component{
@@ -52,6 +53,7 @@ class App extends React.Component{
                     <Route path="/admin/add-product" exact component={AdminAddProduct} />
                     <Route path="/vendor/home" exact component={VendorHome} />
                     <Route path="/search/results" exact component={Search} />
+                    <Route path="/vendor/login" exact component={VendorLogin} />
                 </Switch>
             </BrowserRouter>
         )

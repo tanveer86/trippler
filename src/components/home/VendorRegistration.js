@@ -17,7 +17,7 @@ class VendorRegistration extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            vendorId: '',
+            vendorId: 1,
             vendorName: '',
             vendorEmail: '',
             vendorMobile: '',
@@ -40,7 +40,7 @@ class VendorRegistration extends React.Component {
         userSubmit.preventDefault();
         this.setState({vendorId:'',vendorName:'',vendorEmail:'',vendorMobile:'',vendorPassword:'',vendorArea:'',vendorCity:'',vendorPIN:'',vendorLicense:'',vendorGST:'',vendorLogo:''})
         let newVendor = {
-            vendorId: this.state.vendorId,
+            vendorId: this.state.vendorId++,
             vendorName: this.state.vendorName,
             vendorEmail: this.state.vendorEmail,
             vendorMobile: this.state.vendorMobile,
@@ -135,33 +135,6 @@ class VendorRegistration extends React.Component {
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-9">
                                                 <button type="submit" class="btn btn-primary w-100">Register Now</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-9 col-md-12 col-lg-4 ml-4">
-                            <div class="card p-5 mt-5 shadow">
-                                <h4 class="font-weight-bold text-center">Vendor Login</h4>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="from-group row mb-2">
-                                            <label for="productname" class="col-sm-3 col-form-label">Email Id</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" placeholder="Enter Email address" />
-                                            </div>
-                                        </div>
-                                        <div class="from-group row mb-2 mt-3">
-                                            <label for="productname" class="col-sm-3 col-form-label">Password</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" placeholder="Enter Password" />
-                                            </div>
-                                        </div>
-                                        <div class="from-group row mb-2 mt-3">
-                                            <label for="alcohalcontent" class="col-sm-3 col-form-label"></label>
-                                            <div class="col-sm-8">
-                                                <button type="button" class="btn btn-primary w-100">Login</button>
                                             </div>
                                         </div>
                                     </form>

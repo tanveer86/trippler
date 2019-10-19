@@ -57,11 +57,9 @@ class Booking extends React.Component {
                         <img src={eachProduct.productImage} height="150"/>
                         <h4 class="mt-2">{eachProduct.productName}</h4>
                         <p class="font-weight-bolder">{eachProduct.productSellingPrice}</p>
-                        
-                        
-                        <div class="float-left ml-2"><img src="https://www.freeiconspng.com/uploads/arrow-down-icon-png-10.png" width="40" height="20" onClick={()=>{this.handleSubtractQuantity(eachProduct.productId)}}></img></div>
+                        <div class="float-left ml-2"><img src="https://img.icons8.com/cotton/2x/minus--v2.png" width="40" height="40" onClick={()=>{this.handleSubtractQuantity(eachProduct.productId)}}></img></div>
                         <p class="float-left">Quantity: {eachProduct.quantity}</p>
-                        <div class="float-left "><img src="https://i.ya-webdesign.com/images/arrow-up-icon-png.png" width="40" height="20"  onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
+                        <div class="float-left "><img src="https://img.icons8.com/cotton/2x/plus--v2.png" width="40" height="40" onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
                         <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
                     </div>
                 </div>

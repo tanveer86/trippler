@@ -24,19 +24,19 @@ render(){
                     <div class="card col-12 mt-3">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                            <img src={showProduct.productImage} class="card-img" alt="..." height="350"/>
+                            <img src={showProduct.productImage} class="card-img" alt={showProduct.productName} title={showProduct.productName} height="350"/>
                             </div>
                             <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{showProduct.productName}</h5>
+                                <h5 class="card-title">{showProduct.productName} {showProduct.productVolume}</h5>
                                 <p class="card-text text-capitalize">Brand: {showProduct.productBrand}</p>
                                 <p class="card-text text-capitalize">Type: {showProduct.productCategory}</p>
                                 <del><p class="card-text text-danger" style={{textDecoration: 'linethrough'}}>MRP: Rs. {showProduct.productMRP}</p></del>
                                 <p class="card-text text-danger font-weight-bolder mt-2">Selling Price: Rs. {showProduct.productSellingPrice}</p>
                                 <p class="card-text">{showProduct.productDescription}</p>
                             </div>
-                            <button class="btn btn-danger mr-4" onClick={()=>{this.handleClick(showProduct.productId)}}>Add to Cart</button>
-                            <button class="btn btn-success mr-4 font-weight-bolder">Bid Now</button>
+                            <button class="btn btn-danger mr-4 font-weight-bolder btn-lg" onClick={()=>{this.handleClick(showProduct.productId)}}>Add to Cart</button>
+                            <button type="button" class="btn btn-success mr-4 font-weight-bolder btn-lg" data-toggle="tooltip" data-placement="top" title="COMMING SOON">Bid Now</button>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ render(){
                             return(
                                 <div class="row">
                                     <div class="col-3 mt-2">
-                                        <img src={eachVendor.vendorLogo} width="150"/>
+                                        <img src={eachVendor.vendorLogo} width="150" height="90"/>
                                     </div>
                                     <div class="col-3">
                                         <ul style={{listStyle:'none'}}>

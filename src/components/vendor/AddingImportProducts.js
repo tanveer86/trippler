@@ -4,11 +4,13 @@ import {connect} from 'react-redux'
 var arr=[];
 let getStorage = JSON.parse(localStorage.getItem('products'));
 
+let getVendor = JSON.parse(localStorage.getItem('vendorLogin'));
+
 class AddingImportProducts extends React.Component {
     constructor(){
         super();
         this.state = {
-            vendorName: 'Tanveer',
+            vendorName: getVendor.vendorName,
             discountPercentage: null
         }
     }

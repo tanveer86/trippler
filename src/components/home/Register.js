@@ -17,7 +17,7 @@ class Register extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            userId: '',
+            userId: 1,
             userName: '',
             userDOB: '',
             userEmail: '',
@@ -36,7 +36,7 @@ class Register extends React.Component {
     inputSubmit = (userSubmit) => {
         userSubmit.preventDefault();
         let newUser = {
-            userId: this.state.userId,
+            userId: this.state.userId++,
             userName: this.state.userName,
             userDOB: this.state.userDOB,
             userEmail: this.state.userEmail,
