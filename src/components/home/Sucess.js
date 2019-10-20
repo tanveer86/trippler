@@ -2,6 +2,7 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
+import Footer from '../layout/Footer';
 
 function Sucess() {
     return(
@@ -120,6 +121,7 @@ function Sucess() {
             </div>
        </div>
        <h3 class="float-right mr-5 font-weight-bold">Total Price:₹ 1000 </h3>
+       <Footer />
         </React.Fragment>
     )
 }

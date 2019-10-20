@@ -5,6 +5,7 @@ import Nav from '../layout/Nav';
 import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function Brand(props) {
 
@@ -18,7 +19,7 @@ function Brand(props) {
                         <h5 class="card-title">{eachProduct.productName}</h5>
                         <p class="card-text text-danger">MRP Rs. {eachProduct.productMRP}</p>
                         <p class="card-text text-danger">Rs. {eachProduct.productSellingPrice}</p>
-                        <button class="btn btn-danger font-weight-bolder">View Detail</button>
+                        <Link to={`/product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
                     </div>
                 </div>
             </div>

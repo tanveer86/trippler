@@ -16,9 +16,8 @@ function Category(props) {
                 <div class="card">
                     <img src={eachProduct.productImage} class="card-img-top" alt={eachProduct.productName} title={eachProduct.productName} height="250" />
                     <div class="card-body">
-                        <h5 class="card-title">{eachProduct.productName}</h5>
-                        <p class="card-text text-danger">MRP: Rs. {eachProduct.productMRP}</p>
-                        <p class="card-text text-danger">Rs. {eachProduct.productSellingPrice}</p>
+                        <Link to={`product/${eachProduct.productName}`} class="text-dark font-weight-bolder"><h5 class="card-title">{eachProduct.productName}</h5></Link>
+                        <p class="card-text text-danger">Buy at Rs. {eachProduct.productSellingPrice}</p>
                         <Link to={`product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
                     </div>
                 </div>
@@ -33,11 +32,11 @@ function Category(props) {
             <div class="container-fuild">
                 <div class="row"> 
                     <div class="col-12">
-                        <img src="http://www.supergeona.com/wp-content/uploads/2016/12/drinks-1-1300x300.jpg" class="img-fluid" alt="Responsive image" />
+                        <img src="https://i.ibb.co/HXVMgnD/wine.jpg" class="img-fluid" alt="Responsive image" />
                     </div>
                 </div>
             </div>
-            <div class="container-fuild bg-light">
+            <div class="container-fuild bg-light p-3">
                 <div class="row">
                         {showProducts}
                     <Footer />

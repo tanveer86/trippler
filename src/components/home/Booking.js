@@ -5,6 +5,7 @@ import Nav from '../layout/Nav';
 import {connect} from 'react-redux';
 import { removeItem, addQuantity, subtractQuantity, addingOrder } from '../../redux/actions/AllActions';
 import CartUserDetails from '../layout/CartUserDetails';
+import Footer from '../layout/Footer';
 
 let userLogin = JSON.parse(localStorage.getItem('userLogin'));
 let todayDate = new Date().toDateString();
@@ -58,6 +59,7 @@ class Booking extends React.Component {
         this.props.addingOrder(newOrder);
         ordersStorage.push(newOrder);
         localStorage.setItem("orders",JSON.stringify(ordersStorage));
+        this.props.history.push('/user/sucess');
         // console.log(newOrder)
     }
 
@@ -92,7 +94,7 @@ class Booking extends React.Component {
                 <TopBar />
                 <Header />
                 <Nav />
-                <div class="container mt-5">
+                <div class="container mt-5 mb-5">
                     <div class="row">
                         <div class="col-9">
                         <div class="accordion" id="accordionExample">
@@ -111,7 +113,7 @@ class Booking extends React.Component {
                                             {showCartProducts}
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continue to Checkout</button>
+                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder btn-lg" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continue to Checkout</button>
                                 </div>
                             </div>
                             <div class="card">
@@ -125,7 +127,7 @@ class Booking extends React.Component {
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body text-center">
                                     <CartUserDetails />
-                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Continue to Checkout</button>
+                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder btn-lg" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Continue to Checkout</button>
                                     
                                 </div>
                                 </div>
@@ -143,7 +145,7 @@ class Booking extends React.Component {
                                     <form onSubmit={this.orderInputSubmit}>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="1234 Main St" value={this.state.orderAddress} name="orderAddress" onChange={this.orderInputChange} required />
+                                            <input type="text" class="form-control" placeholder="Enter Your Full Address" value={this.state.orderAddress} name="orderAddress" onChange={this.orderInputChange} required />
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
@@ -154,11 +156,11 @@ class Booking extends React.Component {
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Area</label>
-                                                <input type="text" class="form-control" name="orderArea" value={this.state.orderArea} required onChange={this.orderInputChange} />
+                                                <input type="text" class="form-control" name="orderArea" value={this.state.orderArea} required onChange={this.orderInputChange} placeholder="Enter Your Area" />
                                             </div>
                                             <div class="form-roup col-md-2">
                                                 <label>Pin Code</label>
-                                                <input type="number" class="form-control" name="orderPincode" value={this.state.orderPincode} required onChange={this.orderInputChange} />
+                                                <input type="number" class="form-control" name="orderPincode" value={this.state.orderPincode} required onChange={this.orderInputChange} placeholder="Enter Your Pin Code" />
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -192,6 +194,7 @@ class Booking extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </React.Fragment>
         )
     }

@@ -24,6 +24,7 @@ import VendorHome from './components/vendor/VendorHome';
 import Search from './components/home/Search';
 import VendorLogin from './components/home/VendorLogin';
 import AllProducts from './components/home/AllProducts';
+import Tanveer from './components/home/Tanveer';
 
 
 class App extends React.Component{
@@ -56,6 +57,7 @@ class App extends React.Component{
                     <Route path="/search/results" exact component={Search} />
                     <Route path="/vendor/login" exact component={VendorLogin} />
                     <Route path="/category/all-products" exact component={AllProducts} />
+                    <Route path="/tanveer/login" exact component={Tanveer} />
                 </Switch>
             </BrowserRouter>
         )
