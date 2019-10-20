@@ -6,21 +6,18 @@ import RelatedProducts from '../layout/RelatedProducts';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {addToCart} from '../../redux/actions/AllActions';
-
-var discountArr=[];
+import {addToCart} from '../../redux/actions/AllActions'
 class ProductDetail extends React.Component{
     handleClick = (productId)=>{
     this.props.addToCart(productId); 
     }
-
 render(){
+    var discountArr=[];
     let showProduct = this.props.productData.products.find(product => product.productName == this.props.match.params.productName);
-    console.log(showProduct.productVendor[1].discountPercentage)
     for(var i=0;i<showProduct.productVendor.length;i++)
     {
-       var sellingPrice=Number(showProduct.productMRP)-Number(showProduct.productVendor[i].discountPercentage)*Number(showProduct.productMRP)*0.01;
-       discountArr.push(Math.floor(sellingPrice))   
+       let sellingPrice=Number(showProduct.productMRP)-Number(showProduct.productVendor[i].discountPercentage)*Number(showProduct.productMRP)*0.01;
+       discountArr.push(sellingPrice)   
     }
     
     return(

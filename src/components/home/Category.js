@@ -2,7 +2,6 @@ import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
-import CategorySort from '../layout/CategorySort';
 import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
 import {connect} from 'react-redux';
@@ -26,7 +25,6 @@ function Category(props) {
             </div>
         )
     })
-    
     return(
         <React.Fragment>
             <TopBar />
@@ -41,7 +39,6 @@ function Category(props) {
             </div>
             <div class="container-fuild bg-light">
                 <div class="row">
-                    <CategorySort />
                         {showProducts}
                     <Footer />
                 </div>
@@ -49,7 +46,6 @@ function Category(props) {
         </React.Fragment>
     )
 }
-
 const mapStateToProps = (state) => {
     return {
         allProducts: state.products
