@@ -5,6 +5,7 @@ const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_ITEM = 'REMOVE_ITEM';
 const SUB_QUANTITY = 'SUB_QUANTITY';
 const ADD_QUANTITY = 'ADD_QUANTITY';
+const ORDER_ADDED = 'ORDER_ADDED';
 
 const addingProduct = productData => {
     // console.log(productData)
@@ -61,6 +62,26 @@ const addingUser = userData => {
 
     }
 }
+
+const addingOrder = orderData => {
+    console.log(orderData)
+    return {
+        type: ORDER_ADDED,
+        orderId: orderData.orderId,
+        orderUserId: orderData.orderUserId,
+        orderVendorId: orderData.orderVendorId,
+        orderProductDetails: orderData.orderProductDetails,
+        orderAddress: orderData.orderAddress,
+        orderCity: orderData.orderCity,
+        orderArea: orderData.orderArea,
+        orderPincode: orderData.orderPincode,
+        orderPaymentMode: orderData.orderPaymentMode,
+        orderTotalPrice: orderData.orderTotalPrice,
+        orderStatus: orderData.orderStatus,
+        orderDate: orderData.orderDate
+    }
+}
+
 const addToCart= (productId)=>{
     console.log(productId)
     return{
@@ -68,12 +89,14 @@ const addToCart= (productId)=>{
         productId: productId,
     }
 }
+
 export const removeItem=(productId)=>{
     return{
         type: REMOVE_ITEM,
         productId
     }
 }
+
 export const subtractQuantity=(productId)=>{
     return{
         type: SUB_QUANTITY,
@@ -88,4 +111,4 @@ export const addQuantity=(productId)=>{
     }
 }
 
-export {addingProduct, addingVendor, addingUser, addToCart}
+export {addingProduct, addingVendor, addingUser, addToCart, addingOrder}

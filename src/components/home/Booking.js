@@ -3,47 +3,72 @@ import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
 import Nav from '../layout/Nav';
 import {connect} from 'react-redux';
-import { removeItem, addQuantity, subtractQuantity } from '../../redux/actions/AllActions';
+import { removeItem, addQuantity, subtractQuantity, addingOrder } from '../../redux/actions/AllActions';
+import CartUserDetails from '../layout/CartUserDetails';
+
+let userLogin = JSON.parse(localStorage.getItem('userLogin'));
+let todayDate = new Date().toDateString();
+
+let ordersStorage = [];
+let getStorage = JSON.parse(localStorage.getItem('orders'));
+
+if(getStorage){
+    ordersStorage = [...getStorage]
+}
 
 class Booking extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            userId: '',
-            userName: '',
-            userMobile: '',
-            userDOB: '',
-            userAadhar: '',
-            userEmail: '',
-            userPassword: '',
-            userStatus: '',
-            userOrderHistory: '',
+            orderId: 1,
+            orderUserId: userLogin.userName,
+            orderVendorId: '',
+            orderProductDetails: [],
+            orderAddress: '',
+            orderCity: 'Bangalore',
+            orderArea: '',
+            orderPincode: '',
+            orderPaymentMode: 'Cash on Delivery',
+            orderTotalPrice: this.props.addToCart.total,
+            orderStatus: true,
+            orderDate: todayDate
         }
     }
 
-    inputChange = (userInput) => {
-        this.setState({[userInput.target.name]: userInput.target.value})
-    }
-
-    userSubmit = (userSubmit) => {
-        userSubmit.preventDefault();
-        console.log(this.state)
-    }
-
     orderInputChange = (orderInput) => {
-        console.log(orderInput.target.orderArea)
+        this.setState({[orderInput.target.name]: orderInput.target.value})
     }
 
     orderInputSubmit = (orderSubmit) => {
         orderSubmit.preventDefault();
-        console.log(orderSubmit)
+        let newOrder = {
+            orderId: this.state.orderId,
+            orderUserId: this.state.orderUserId,
+            orderVendorId: this.state.orderVendorId,
+            orderProductDetails: this.state.orderProductDetails,
+            orderAddress: this.state.orderAddress,
+            orderCity: this.state.orderCity,
+            orderArea: this.state.orderArea,
+            orderPincode: this.state.orderPincode,
+            orderPaymentMode: this.state.orderPaymentMode,
+            orderTotalPrice: this.state.orderTotalPrice,
+            orderStatus: this.state.orderStatus,
+            orderDate: this.state.orderDate
+        }
+        this.props.addingOrder(newOrder);
+        ordersStorage.push(newOrder);
+        localStorage.setItem("orders",JSON.stringify(ordersStorage));
+        // console.log(newOrder)
     }
+
     handleRemove = (productId)=>{
         this.props.removeItem(productId);
     }
+
     handleAddQuantity = (productId)=>{
         this.props.addQuantity(productId);
     }
+
     handleSubtractQuantity = (productId)=>{
         this.props.subtractQuantity(productId);
     }
@@ -59,9 +84,7 @@ class Booking extends React.Component {
                     <p class="float-left">Quantity: {eachProduct.quantity}</p>
                     <div class="float-left "><img src="https://img.icons8.com/cotton/2x/plus--v2.png" width="40" height="40" onClick={()=>{this.handleAddQuantity(eachProduct.productId)}}></img></div>
                     <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
-                </div>
-
-                
+                </div>  
             )
         })
         return(
@@ -88,7 +111,7 @@ class Booking extends React.Component {
                                             {showCartProducts}
                                         </div>
                                     </div>
-                                    <button>outcard</button>
+                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Continue to Checkout</button>
                                 </div>
                             </div>
                             <div class="card">
@@ -100,48 +123,10 @@ class Booking extends React.Component {
                                 </h2>
                                 </div>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <form onSubmit={this.userSubmit}>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>Your Name</label>
-                                                <input type="text" class="form-control" placeholder="Your Name" value={this.state.userName} name="userName" onChange={this.inputChange} required />
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Mobile Number</label>
-                                                <input type="number" class="form-control" placeholder="Your Mobile Number" value={this.state.userMobile} name="userMobile" onChange={this.inputChange} required/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>Your Date of Birth</label>
-                                                <input type="text" class="form-control" placeholder="Your Date of Birth" value={this.state.userDOB} name="userDOB" onChange={this.inputChange} required/>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Aadhar Number</label>
-                                                <input type="number" class="form-control" placeholder="Your Aadhar Number" value={this.state.userAadhar} name="userAadhar" onChange={this.inputChange} required/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control" placeholder="Email" value={this.state.userEmail} name="userEmail" onChange={this.inputChange} required />
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Password" value={this.state.userPassword} name="userPassword" onChange={this.inputChange} required />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck" />
-                                                <label class="form-check-label">
-                                                    I agree to the Trippler's terms and conditions.
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-link btn-primary text-white" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Register & Continue</button>
-                                    </form>
+                                <div class="card-body text-center">
+                                    <CartUserDetails />
+                                    <button type="button" class="btn btn-danger m-3 font-weight-bolder" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Continue to Checkout</button>
+                                    
                                 </div>
                                 </div>
                             </div>
@@ -158,39 +143,40 @@ class Booking extends React.Component {
                                     <form onSubmit={this.orderInputSubmit}>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="1234 Main St" value={this.state.orderAddress} name="orderAddress"  />
+                                            <input type="text" class="form-control" placeholder="1234 Main St" value={this.state.orderAddress} name="orderAddress" onChange={this.orderInputChange} required />
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <label>City</label>
-                                                <select class="form-control" value={this.state.orderCity} name="orderCity" >
+                                                <select class="form-control" value={this.state.orderCity} name="orderCity" onChange={this.orderInputChange} >
                                                     <option selected>Bangalore</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Area</label>
-                                                <select class="form-control" value={this.state.orderArea} name="orderArea" >
-                                                    <option selected>Choose...</option>
-                                                    <option>Kormangala</option>
-                                                    <option>Jayanagar</option>
-                                                    <option>BTM Layout</option>
-                                                    <option>JP Nagar</option>
-                                                </select>
+                                                <input type="text" class="form-control" name="orderArea" value={this.state.orderArea} required onChange={this.orderInputChange} />
                                             </div>
                                             <div class="form-roup col-md-2">
                                                 <label>Pin Code</label>
-                                                <input type="text" class="form-control" name="orderPinCode" value={this.state.orderPinCode}  />
+                                                <input type="number" class="form-control" name="orderPincode" value={this.state.orderPincode} required onChange={this.orderInputChange} />
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label>Payment Mode</label>
+                                            <select class="form-control" value={this.state.orderPaymentMode} name="orderPaymentMode" onChange={this.orderInputChange}>
+                                                <option>Select a Payment Mode</option>
+                                                <option>Cash On Delivery</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" />
+                                                <input checked class="form-check-input" type="checkbox" />
                                                 <label class="form-check-label">
                                                     I agree to the Trippler's terms and conditions.
                                                 </label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-link btn-primary text-white" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Continue</button>
+                                        <button type="submit" class="btn btn-danger btn-lg font-weight-bolder">Place Your Order</button>
                                     </form>
                                 </div>
                                 </div>
@@ -219,7 +205,8 @@ const mapDispatchToProps = (dispatch)=>{
     return{
         removeItem: (productId)=>{dispatch(removeItem(productId))},
         addQuantity: (productId)=>{dispatch(addQuantity(productId))},
-        subtractQuantity: (productId)=>{dispatch(subtractQuantity(productId))}
+        subtractQuantity: (productId)=>{dispatch(subtractQuantity(productId))},
+        addingOrder: orderData => dispatch(addingOrder(orderData))
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Booking)
