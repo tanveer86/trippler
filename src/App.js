@@ -43,7 +43,7 @@ class App extends React.Component{
                     <Route path="/user/order-detail" exact component={OrderDetail} />
                     <Route path="/user/live-bidding" exact component={LiveBidding} />
                     <Route path="/user/register" exact render={props => <Register {...props} /> } />
-                    <Route path="/login" exact component={Login} />
+                    <Route path="/user/login" exact component={Login} />
                     <Route path="/vendor/payments" exact component={Payments} />
                     <Route path="/vendor/bidding-detail" exact component={BiddingDetail} />
                     <Route path="/vendor/bidding-list" exact component={BiddingList} />

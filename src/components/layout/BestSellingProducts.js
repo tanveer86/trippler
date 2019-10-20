@@ -10,9 +10,8 @@ function BestSellingProducts(props) {
         return(
             <div class="col-3 font-weight-bolder p-2 bg-white">
                 <img src={eachProduct.productImage} height="200"/>
-                <h5>{eachProduct.productName}</h5>
-                <p>MRP Rs. {eachProduct.productMRP}</p>
-                <p>Selling Rs. {eachProduct.productSellingPrice}</p>
+                <Link class="text-dark font-weight-bolder" to={`product/${eachProduct.productName}`}><h5>{eachProduct.productName}</h5></Link>
+                <p class="text-danger font-weight-bolder">Buy at Rs. {eachProduct.productSellingPrice}</p>
                 <Link to={`product/${eachProduct.productName}`} class="btn btn-danger font-weight-bolder">View Detail</Link>
             </div>
         )
@@ -29,7 +28,9 @@ function BestSellingProducts(props) {
             </div>
             <div class="container-fuild">
                 <div class="row text-center bg-light">
-                    {showProducts}
+                    
+                        {showProducts}
+                    
                 </div>
             </div>
         </React.Fragment>

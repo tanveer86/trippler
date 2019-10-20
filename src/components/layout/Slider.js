@@ -6,7 +6,7 @@ function Slider(){
         <React.Fragment>
             <div class="container-fuild">
                 <div class="row">
-                    <div class="2">
+                    <div class="col-2">
                         <div class="card" style={{width: "13rem"}}>
                         <div class="card-header text-center font-weight-bolder">
                             <h5>Popular Brands</h5>
@@ -14,7 +14,7 @@ function Slider(){
                             <SidebarCategories />
                         </div>
                     </div>
-                    <div class="col-7 ml-2">
+                    <div class="col-10">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -23,13 +23,13 @@ function Slider(){
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                <img src="https://www.kingfisherworld.com/sites/default/files/prod-img_1.jpg" class="d-block w-100" alt="..." height="352" />
+                                <img src="https://i.ibb.co/G7xPp9R/kingfisher.jpg" class="d-block w-100" height="346" />
                                 </div>
                                 <div class="carousel-item">
-                                <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-asia.com/headlines/business/malaysia-sugar-tax-carlsberg-promises-no-price-hikes-for-beers-and-minimal-impact-on-other-brands/9471468-1-eng-GB/Malaysia-sugar-tax-Carlsberg-promises-no-price-hikes-for-beers-and-minimal-impact-on-other-brands_wrbm_large.jpg" class="d-block w-100" alt="..." height="352" />
+                                <img src="https://i.ibb.co/mbcn6YZ/carlsberg.jpg" class="d-block w-100" height="346" />
                                 </div>
                                 <div class="carousel-item">
-                                <img src="https://i.dmarge.com/2017/02/jameson002-960x580.jpg" class="d-block w-100" alt="..." height="352" />
+                                <img src="https://i.ibb.co/nmgD9M2/jamesson.jpg" class="d-block w-100" height="346" />
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -41,10 +41,6 @@ function Slider(){
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0058/8854/0731/products/Bira_FullWidth_B_2048x.jpg?v=1540494415" width="320" class=""/>
-                        <img src="https://paytm.com/offers/img/addmoneyupiWeb.jpg" width="320" />
                     </div>
                 </div>
             </div>
