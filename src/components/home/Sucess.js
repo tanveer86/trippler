@@ -1,7 +1,8 @@
 import React from 'react';
 import TopBar from '../layout/TopBar';
 import Header from '../layout/Header';
-import Nav from '../layout/Nav'
+import Nav from '../layout/Nav';
+
 function Sucess() {
     return(
         <React.Fragment>
@@ -9,6 +10,11 @@ function Sucess() {
             <Header/>
             <Nav/>
            <div class="container-fluid">
+               <div class="row">
+                   <div class="col-12 text-center mt-5">
+                        <h2 class="text-success">Your Order Has Been Confirmed and It Will be Delieved Soon</h2>
+                   </div>
+               </div>
                <div class="row">
                    <div class="col-7 my-5">
                        <div class="card">
@@ -114,8 +120,6 @@ function Sucess() {
             </div>
        </div>
        <h3 class="float-right mr-5 font-weight-bold">Total Price:₹ 1000 </h3>
-       <h2 class="mt-4 offset-3 mb-5 text-success">Your Order has been Confirmed and It will be delieved Soon</h2>
-
         </React.Fragment>
     )
 }
