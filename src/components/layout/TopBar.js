@@ -7,7 +7,7 @@ function TopBar(){
             <div class="container-fluid">
                 <div class="row bg-primary text-white font-weight-bolder">
                     <div class="col-10">
-                        <p class="mt-3">GET FREE DELIVERY ON ALL ODERS</p>
+                        <p class="mt-3">GET FREE DELIVERY ON ALL ORDERS</p>
                     </div>
                     <div class="col-2">
                         <nav class="nav">

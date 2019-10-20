@@ -52,7 +52,7 @@ render(){
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>Also Available at {this.props.vendorData.vendors.length} more sellers</h2>
+                        <h2>Also Available at {this.props.vendorData.vendors.length} More Sellers</h2>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ render(){
                                         </ul>
                                     </div>
                                     <div class="col-3 mt-2">
-                                        <button class="btn btn-danger btn-lg font-weight-bolder">Buy Now</button>
+                                        <button class="btn btn-danger btn-lg font-weight-bolder" disabled>Buy Now</button>
                                     </div>
                                 </div>
                             )

@@ -7,7 +7,7 @@ function Nav() {
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 bg-danger font-weight-bolder p-2">
-                        <nav class="nav">
+                        <nav class="nav justify-content-center">
                             <Link class="nav-link text-white" to="/category/all-products">All Categories</Link>
                             <Link class="nav-link active text-white" to="/beer">Beer</Link>
                             <Link class="nav-link text-white" to="/whiskey">Whiskey</Link>
