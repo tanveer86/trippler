@@ -41,7 +41,7 @@ class AddingImportProducts extends React.Component {
             
             //amit helped to calculate this
             let lowestPrice = getStorage[i].productMRP - (getStorage[i].productMRP*maxDis*0.01)
-            getStorage[i].productSellingPrice = lowestPrice;
+            getStorage[i].productSellingPrice = Math.floor(lowestPrice);
             localStorage.setItem("products",JSON.stringify(getStorage));
         }
     }

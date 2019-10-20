@@ -61,34 +61,7 @@ class Booking extends React.Component {
                     <div class="float-left "><img src="https://cdn6.aptoide.com/imgs/6/7/b/67bacc637d58c80da40a5c2ec6d6f74d_icon.png?w=240" onClick={()=>{this.handleRemove(eachProduct.productId)}} width="40" height="30"></img></div>
                 </div>
 
-<div class="col-12 mt-3 pt-4 text-center border border-danger">
-{this.props.vendorData.vendors.map(eachVendor => {
-    return(
-        <div class="row">
-            <div class="col-3 mt-2">
-                <img src={eachVendor.vendorLogo} width="150" height="90"/>
-            </div>
-            <div class="col-3">
-                <ul style={{listStyle:'none'}}>
-                    <li class="text-danger font-weight-bolder">SELLER DETAILS</li>
-                    <li>{eachVendor.vendorName}</li>
-                    <li>{eachVendor.vendorArea}</li>
-                </ul>
-            </div>
-            <div class="col-3">
-                <ul style={{listStyle:'none'}}>
-                    <li class="text-danger font-weight-bolder">PRODUCT DETAILS</li>
-                    <li>{showProduct.productName}</li>
-                    <li>Selling Price: Rs. {showProduct.productSellingPrice}</li>
-                </ul>
-            </div>
-            <div class="col-3 mt-2">
-                <button class="btn btn-danger btn-lg font-weight-bolder">Buy Now</button>
-            </div>
-        </div>
-    )
-})}
-</div>
+                
             )
         })
         return(
