@@ -1,14 +1,13 @@
 import React from 'react'
-
-let userLogin = JSON.parse(localStorage.getItem('userLogin'));
+import {connect} from 'react-redux';
 
 function UserCheck(props) {
 
-    // if(!userLogin){
-    //     this.props.history.push('/user/register')
+    // if(props.userLogin.userName){
+    //     console.log('has user')
     // }
 
-    console.log(props)
+   
     return(
         <React.Fragment>
 
@@ -16,4 +15,10 @@ function UserCheck(props) {
     )
 }
 
-export default UserCheck;
+const mapStateToProps = (state) => {
+    return {
+        userLogin: state.userLogin.userLogin
+    }
+}
+
+export default connect(mapStateToProps)(UserCheck)

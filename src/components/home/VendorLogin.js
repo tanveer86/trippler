@@ -47,7 +47,7 @@ class VendorLogin extends React.Component{
                             <div class="from-group row mb-2 mt-3">
                                 <label class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.inputChange} required />
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.inputChange} required />
                                 </div>
                             </div>
                             <div class="from-group row mb-2 mt-3">

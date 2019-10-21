@@ -1,11 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addingUser} from '../../redux/actions/AllActions';
+import {addingUser, userLogin} from '../../redux/actions/AllActions';
 
 let usersStorage = [];
 let getStorage = JSON.parse(localStorage.getItem('users'));
-
-let userLogin = JSON.parse(localStorage.getItem('userLogin'));
 
 if(getStorage){
     usersStorage = [...getStorage]
@@ -46,6 +44,7 @@ class Tanveer extends React.Component{
         }
         this.props.addingUser(newUser);
         usersStorage.push(newUser);
+        this.props.userLogin(this.state)
         localStorage.setItem("users",JSON.stringify(usersStorage));
         localStorage.setItem("userLogin",JSON.stringify(this.state));
         this.props.history.push('/')
@@ -53,6 +52,8 @@ class Tanveer extends React.Component{
     }
 
     render(){
+
+        let userLogin = JSON.parse(localStorage.getItem('userLogin'));
 
         if(!userLogin){
             return(
@@ -125,7 +126,8 @@ class Tanveer extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addingUser: userData => (dispatch(addingUser(userData)))
+        addingUser: userData => (dispatch(addingUser(userData))),
+        userLogin: loginData => (dispatch(userLogin(loginData)))
     }
 }
 

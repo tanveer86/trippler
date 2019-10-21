@@ -6,6 +6,7 @@ const REMOVE_ITEM = 'REMOVE_ITEM';
 const SUB_QUANTITY = 'SUB_QUANTITY';
 const ADD_QUANTITY = 'ADD_QUANTITY';
 const ORDER_ADDED = 'ORDER_ADDED';
+const USER_LOGIN = "USER_LOGIN"
 
 const addingProduct = productData => {
     // console.log(productData)
@@ -63,6 +64,23 @@ const addingUser = userData => {
     }
 }
 
+const userLogin = loginData => {
+    // console.log(loginData)
+    return {
+        type: USER_LOGIN,
+        userId: loginData.userId,
+        userName: loginData.userName,
+        userDOB: loginData.userDOB,
+        userEmail: loginData.userEmail,
+        userMobile: loginData.userMobile,
+        userPassword: loginData.userPassword,
+        userAadhar: loginData.userAadhar,
+        userStatus: loginData.userStatus,
+        userOrderHistory: loginData.userOrderHistory
+
+    }
+}
+
 const addingOrder = orderData => {
     console.log(orderData)
     return {
@@ -111,4 +129,4 @@ export const addQuantity=(productId)=>{
     }
 }
 
-export {addingProduct, addingVendor, addingUser, addToCart, addingOrder}
+export {addingProduct, addingVendor, addingUser, addToCart, addingOrder, userLogin}

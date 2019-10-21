@@ -61,9 +61,7 @@ class VendorRegistration extends React.Component {
     render(){
         return (
             <React.Fragment>
-                <TopBar />
-                <Header />
-                <Nav />
+
                 <div class="container-fluid mb-5">
                     <div class="row">
                         <div class="col-sm-9 col-md-12 col-lg-5 offset-1">
@@ -143,7 +141,6 @@ class VendorRegistration extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </React.Fragment>
         )
     }

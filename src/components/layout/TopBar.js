@@ -1,9 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-let userLogin = JSON.parse(localStorage.getItem('userLogin'));
-
-function TopBar(){
+function TopBar(props){
 
     return(
         <React.Fragment>
@@ -14,8 +13,8 @@ function TopBar(){
                     </div>
                     <div class="col-4">
                         <nav class="nav">
-                            <Link class="nav-link text-white mt-2" to="/user/profile">Hi, {userLogin.userName}</Link>
-                            <Link class="nav-link text-white mt-2" to="/user/logout">Sign Out</Link>
+                            <Link class="nav-link text-white mt-2" to="/user/profile">Hi, {props.userLogin.userLogin.userName}</Link>
+                            <Link class="nav-link text-white mt-2" to="/user/profile">Sign Out</Link>
                         </nav>
                     </div>
                 </div>
@@ -25,4 +24,10 @@ function TopBar(){
     )
 }
 
-export default TopBar;
+const mapStateToProps = (state) => {
+    return{
+        userLogin: state.userLogin
+    }
+}
+
+export default connect(mapStateToProps)(TopBar)

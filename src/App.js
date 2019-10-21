@@ -59,8 +59,8 @@ class App extends React.Component{
                     <Route path="/vendor/login" exact component={VendorLogin} />
                     <Route path="/category/all-products" exact component={AllProducts} />
                     {/* <Route path="/user/register" exact component={Tanveer} /> */}
-                    <Route path="/user/logout" exact component={Logout} />
-                    <Route path="/user/check" exact render={props => <UserCheck {...props} /> } />
+                    {/* <Route path="/user/logout" exact component={Logout} />
+                    <Route path="/user/check" exact render={props => <UserCheck {...props} /> } /> */}
                 </Switch>
             </BrowserRouter>
         )

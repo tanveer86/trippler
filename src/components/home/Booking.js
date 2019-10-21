@@ -7,7 +7,7 @@ import { removeItem, addQuantity, subtractQuantity, addingOrder } from '../../re
 import CartUserDetails from '../layout/CartUserDetails';
 import Footer from '../layout/Footer';
 
-let userLogin = JSON.parse(localStorage.getItem('userLogin'));
+
 let todayDate = new Date().toDateString();
 
 let ordersStorage = [];
@@ -22,7 +22,7 @@ class Booking extends React.Component {
         super(props);
         this.state = {
             orderId: null,
-            orderUserId: userLogin.userName,
+            orderUserId: this.props.userLogin.userName,
             orderVendorId: '',
             orderProductDetails: [],
             orderAddress: '',
@@ -203,6 +203,7 @@ class Booking extends React.Component {
 const mapStateToProps = (state) => {
     return {
         addToCart: state.addedToCart,
+        userLogin: state.userLogin.userLogin
     }
 }
 const mapDispatchToProps = (dispatch)=>{

@@ -1,9 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-let userLogin = JSON.parse(localStorage.getItem('userLogin'));
-
-function CartUserDetails() {
-    if(userLogin){
+function CartUserDetails(props) {
+    if(props.userLogin){
         return(
             <React.Fragment>
                 <div class="card mb-3">
@@ -11,16 +10,16 @@ function CartUserDetails() {
                         <h5 class="card-title text-center font-weight-bolder">Your Account Details</h5>
                         <div class="row p-3">
                             <div class="col-6">
-                                <p class="card-text text-left">Your Name: {userLogin.userName}</p>
+                                <p class="card-text text-left">Your Name: {props.userLogin.userName}</p>
                             </div>
                             <div class="col-6 text-right">
-                                <p class="card-text">Your Mobile: {userLogin.userMobile}</p>
+                                <p class="card-text">Your Mobile: {props.userLogin.userMobile}</p>
                             </div>
                             <div class="col-6">
-                                <p class="card-text text-left">Your Date of Birth: {userLogin.userDOB}</p>
+                                <p class="card-text text-left">Your Date of Birth: {props.userLogin.userDOB}</p>
                             </div>
                             <div class="col-6">
-                                <p class="card-text text-right">Your Email: {userLogin.userEmail}</p>
+                                <p class="card-text text-right">Your Email: {props.userLogin.userEmail}</p>
                             </div>
                         </div>
                     </div>
@@ -37,4 +36,10 @@ function CartUserDetails() {
 
 }
 
-export default CartUserDetails;
+const mapStateToProps = (state) => {
+    return{
+        userLogin: state.userLogin.userLogin
+    }
+}
+ 
+export default connect(mapStateToProps)(CartUserDetails)
