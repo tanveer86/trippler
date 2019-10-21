@@ -21,7 +21,7 @@ class Booking extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            orderId: 1,
+            orderId: null,
             orderUserId: userLogin.userName,
             orderVendorId: '',
             orderProductDetails: [],
@@ -42,11 +42,12 @@ class Booking extends React.Component {
 
     orderInputSubmit = (orderSubmit) => {
         orderSubmit.preventDefault();
+        let uniqueId = Math.floor(Math.random()*1000000);
         let newOrder = {
-            orderId: this.state.orderId,
+            orderId: uniqueId,
             orderUserId: this.state.orderUserId,
             orderVendorId: this.state.orderVendorId,
-            orderProductDetails: this.state.orderProductDetails,
+            orderProductDetails: this.props.addToCart.addedItems,
             orderAddress: this.state.orderAddress,
             orderCity: this.state.orderCity,
             orderArea: this.state.orderArea,
