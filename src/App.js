@@ -10,7 +10,7 @@ import User from './components/user/User';
 import OrderList from './components/user/OrderList';
 import OrderDetail from './components/user/OrderDetail';
 import LiveBidding from './components/user/LiveBidding';
-import Register from './components/home/Register';
+import Register from './components/home/UserRegister';
 import Login from './components/home/Login';
 import Payments from './components/vendor/Payments';
 import BiddingDetail from './components/vendor/BiddingDetail';
@@ -24,7 +24,8 @@ import VendorHome from './components/vendor/VendorHome';
 import Search from './components/home/Search';
 import VendorLogin from './components/home/VendorLogin';
 import AllProducts from './components/home/AllProducts';
-import Tanveer from './components/home/Tanveer';
+import Logout from './components/home/Logout';
+import UserCheck from './components/home/UserCheck';
 
 
 class App extends React.Component{
@@ -57,7 +58,9 @@ class App extends React.Component{
                     <Route path="/search/results" exact component={Search} />
                     <Route path="/vendor/login" exact component={VendorLogin} />
                     <Route path="/category/all-products" exact component={AllProducts} />
-                    <Route path="/tanveer/login" exact component={Tanveer} />
+                    {/* <Route path="/user/register" exact component={Tanveer} /> */}
+                    <Route path="/user/logout" exact component={Logout} />
+                    <Route path="/user/check" exact render={props => <UserCheck {...props} /> } />
                 </Switch>
             </BrowserRouter>
         )

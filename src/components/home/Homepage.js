@@ -9,10 +9,12 @@ import FeaturedProducts from '../layout/FeaturedProducts';
 import ProductDay from '../layout/ProducdDay';
 import TopBrands from '../layout/TopBrands';
 import Footer from '../layout/Footer';
+import UserCheck from './UserCheck';
 
 function Homepage(props) {
     return(
         <React.Fragment>
+            <UserCheck />
             <TopBar />
             <Header props={props} />
             <Nav />
