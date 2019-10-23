@@ -12,11 +12,12 @@ import Footer from '../layout/Footer';
 import UserCheck from './UserCheck';
 
 function Homepage(props) {
+    
     return(
         <React.Fragment>
             <UserCheck />
-            <TopBar />
-            <Header props={props} />
+            <TopBar props={props} />
+            <Header />
             <Nav />
             <Slider />
             <Intro />
